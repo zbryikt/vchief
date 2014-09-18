@@ -21,13 +21,25 @@ x$.controller('section', ['$scope', '$element', 'skolto'].concat(function($scope
   };
 }));
 x$.controller('main', ['$scope', 'randomFact'].concat(function($scope, randomFact){
+  var i$, i, lresult$, j$, j, img, results$ = [];
   setTimeout(function(){
     return $('#footer').sticky({
       topSpacing: 0
     });
   }, 0);
   $scope.randomFact = randomFact();
-  return $scope.ans = {
+  $scope.ans = {
     Q1: {}
   };
+  for (i$ = 1; i$ <= 4; ++i$) {
+    i = i$;
+    lresult$ = [];
+    for (j$ = 1; j$ <= 4; ++j$) {
+      j = j$;
+      img = new Image();
+      lresult$.push(img.src = "../img/choice/" + i + j + ".png");
+    }
+    results$.push(lresult$);
+  }
+  return results$;
 }));

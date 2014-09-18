@@ -18,4 +18,8 @@ angular.module \main, <[]>
     setTimeout (-> $(\#footer)sticky topSpacing: 0), 0
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
-
+    # preload image
+    for i from 1 to 4
+      for j from 1 to 4
+        img = new Image!
+        img.src = "../img/choice/#i#j.png"
