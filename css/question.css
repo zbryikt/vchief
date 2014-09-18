@@ -1,0 +1,25 @@
+.question {
+  margin: 20px auto;
+  background: none;
+  width: 70%;
+  position: relative;
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat; }
+  .question img {
+    width: 100%; }
+  .question .desc {
+    position: absolute;
+    font-size: 1.5em;
+    width: 80%;
+    top: 60px;
+    left: 15%; }
+
+.question.sm .desc {
+  top: 41%; }
+
+.question.md .desc {
+  top: 29%; }
+
+.question.lg .desc {
+  top: 22%; }

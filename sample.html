@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <title>template</title>
+    <!-- libraries-->
+    <script type="text/javascript" src="/assets/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/d3js/3.3.11/d3.v3.min.js"></script>
+    <script type="text/javascript" src="/assets/angular/1.2.3/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="/assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- custom files-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="jquery.sticky.js"></script>
+  </head>
+  <body ng-app="main" ng-controller="main">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand">Test</a></div>
+      </div>
+    </nav>
+    <div id="banner">
+      <div id="banner-title">無限期支持宜婷徵友
+        <div id="banner-subtitle">想要認識年輕美麗的宜婷小妹妹嗎？看完這網頁以後，我驚呆了！</div>
+      </div>
+      <div id="banner-more"><i class="glyphicon glyphicon-chevron-down"></i></div>
+    </div>
+    <div id="footer">新聞 E 論壇 之 我是 footer</div>
+    <div id="Q1" ng-controller="section" class="section row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-7">
+        <div class="content">
+          <h2>爸爸，真受不了，光用看的。</h2>
+          <p class="p">放射到地平線以外，天體的現象嗎，又有人不平地說，還是孱弱的可憐，我在兒童時代，放射到地平線以外，這是經過科學的證明，纔見有些白光，不論什麼階級的人，一絲絲涼爽秋風，老不死的混蛋！我希望有一天能用鼠標雙擊我的錢包，但又找不到出路．如果多吃魚可以補腦讓人變聰明的話，.人怕出名豬怕壯，愛情就像二個拉著橡皮筋的人，我希望有一天能用鼠標雙擊我的錢包，我想早戀，我允許你走進我的世界，住你的房，我的衣服又瘦了！不快交給我，OH，抱歉現在才說，真羨慕你，妳們這兩個傢伙，Giroro仔，那是你家的事</p>
+          <p class="p">Giroro仔，那是你家的事，打起精神來，下次再去吧，真實，做一艘大船，西澤同學，您還活著嗎，NarutoOne，忘了告訴妳，溼黏黏，是非常快樂的事，齲病戰，雖然生產線整日全程運作。為你唱有陽光，god，熱熱的淚墜落唱一句夢的蝴蝶，我在蘆洲，你在睡覺我做白日夢你說凱薩是一種沙拉，改變既有的模式！女人之美，沒有權，愛情就像二個拉著橡皮筋的人，珍惜生活上帝還讓你活著？</p>
+          <p>所以你覺得宜婷需要的是哪類型的男性呢？</p>
+          <div class="question">
+            <div ng-click="choice(1, 'Q2')" class="choice">陽光氣質美型男</div>
+            <div ng-click="choice(1, 'Q2')" class="choice">文靜居家新好男</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Q2" ng-controller="section" class="section row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-7">
+        <div class="content">
+          <h2>Oops! 原來你喜歡這一味！</h2><br>
+          <p ng-show="ans.Q1==1">你確定宜婷需要的是陽光氣質美型男嗎？</p>
+          <p ng-show="asn.Q1==2">沒錯！宜婷需要的就是傳說中的文靜居家新好男！</p><br>
+          <p class="p">放射到地平線以外，天體的現象嗎，又有人不平地說，還是孱弱的可憐，我在兒童時代，放射到地平線以外，這是經過科學的證明，纔見有些白光，不論什麼階級的人，一絲絲涼爽秋風，老不死的混蛋！我希望有一天能用鼠標雙擊我的錢包，但又找不到出路．如果多吃魚可以補腦讓人變聰明的話，.人怕出名豬怕壯，愛情就像二個拉著橡皮筋的人，我希望有一天能用鼠標雙擊我的錢包，我想早戀，我允許你走進我的世界，住你的房，我的衣服又瘦了！不快交給我，OH，抱歉現在才說，真羨慕你，妳們這兩個傢伙，Giroro仔，那是你家的事</p>
+          <p class="p">放射到地平線以外，天體的現象嗎，又有人不平地說，還是孱弱的可憐，我在兒童時代，放射到地平線以外，這是經過科學的證明，纔見有些白光，不論什麼階級的人，一絲絲涼爽秋風，老不死的混蛋！我希望有一天能用鼠標雙擊我的錢包。</p>
+          <div ng-show="ans.Q1==1" class="g">
+            <p>那麼問題來了，既然是陽光氣質美型男，這樣的男性要到哪裡才找得到呢？</p>
+            <div class="question">
+              <div ng-click="choice(1,'Q3')" class="choice">我想夜店應該可以，一黑遮三醜</div>
+              <div ng-click="choice(2,'Q3')" class="choice">可以到健身房物色，順便摸摸看</div>
+            </div>
+          </div>
+          <div ng-show="ans.Q1==2" class="g">
+            <p>現在我們有了類型，那像這樣的居家新好男，年紀幾歲是最適合的呢？</p>
+            <div class="question">
+              <div ng-click="choice(3,'Q3')" class="choice">十八歲剛成年的青春肉體最棒</div>
+              <div ng-click="choice(4,'Q3')" class="choice">三十歲以上的大哥比較會照顧人</div>
+              <div ng-click="choice(5,'Q3')" class="choice">二十來歲，年紀相近才能互相理解</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Q3" ng-controller="section" class="section row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-7">
+        <div class="content">
+          <div ng-show="ans.Q2==1">
+            <h2>看來你才是夜店玩咖吧！</h2>
+            <p class="p">幫宜婷物色對象竟然物色到夜店去！下次要出發請務必要帶我啊！</p>
+          </div>
+          <div ng-show="ans.Q2==2">
+            <h2>健身房是不錯，但是...</h2>
+            <p class="p">順便摸摸看是怎樣！你們這些變態！</p>
+          </div>
+          <div ng-show="ans.Q3==3">
+            <h2>老牛吃嫩草嗎</h2>
+            <p class="p">人家才十八歲剛畢業，還是不要荼毒他們了吧！</p>
+          </div>
+          <div ng-show="ans.Q3==4">
+            <h2>大哥果然會照顧人</h2>
+            <p class="p">我快要掰不出來了所以只好隨便打一打</p>
+          </div>
+          <div ng-show="ans.Q3==5">
+            <h2>二十來歲剛出社會的新鮮小毛頭</h2>
+            <p class="p">一時看鬧熱的人，這是什麼言語？多亂惱惱地熱鬧著，福戶內的事，忘記他的伴侶，也是生活上一種餘興</p>
+          </div>
+          <p class="p">Giroro仔，那是你家的事，打起精神來，下次再去吧，真實，做一艘大船，西澤同學，您還活著嗎，NarutoOne，忘了告訴妳，溼黏黏，是非常快樂的事，齲病戰，雖然生產線整日全程運作。為你唱有陽光，god，熱熱的淚墜落唱一句夢的蝴蝶，我在蘆洲，你在睡覺我做白日夢你說凱薩是一種沙拉，改變既有的模式！女人之美，沒有權，愛情就像二個拉著橡皮筋的人，珍惜生活上帝還讓你活著？</p>
+          <p class="p">放射到地平線以外，天體的現象嗎，又有人不平地說，還是孱弱的可憐，我在兒童時代，放射到地平線以外，這是經過科學的證明，纔見有些白光，不論什麼階級的人，一絲絲涼爽秋風，老不死的混蛋！我希望有一天能用鼠標雙擊我的錢包。</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

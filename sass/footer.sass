@@ -1,0 +1,18 @@
+@import basic
+#footer
+  position: fixed
+  bottom: 0
+  height: 22px
+  background: rgba(255,255,255,0.1)
+  width: 100%
+  padding: 5px
+  opacity: 0
+  @include transition(all 0.5s)
+  color: #fff
+  text-shadow: 0 0 5px rgba(0,0,0,1)
+
+.is-sticky #footer
+  top: auto!important
+  bottom: 0!important
+  opacity: 1
+  font-size: 12px

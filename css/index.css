@@ -1,0 +1,87 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 20px; }
+
+#puzzle {
+  width: 50%;
+  background: #fff; }
+
+#content {
+  width: 50%;
+  margin-left: 50%;
+  background: #e6d471; }
+
+.question {
+  margin: 20px auto;
+  background: none;
+  width: 70%;
+  position: relative;
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat; }
+  .question img {
+    width: 100%; }
+  .question .desc {
+    position: absolute;
+    font-size: 1.5em;
+    width: 80%;
+    top: 60px;
+    left: 15%; }
+
+.question.sm .desc {
+  top: 41%; }
+
+.question.md .desc {
+  top: 29%; }
+
+.question.lg .desc {
+  top: 22%; }
+
+.choices {
+  width: 388px;
+  margin: 20px auto; }
+
+.choice {
+  width: 91px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  cursor: pointer;
+  position: relative; }
+  .choice img {
+    width: 100%; }
+  .choice .desc {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    text-align: center;
+    width: 90%;
+    margin: 5%; }
+
+.choice.c1 {
+  background-image: url(/img/choice/11.png); }
+
+.choice.c1:hover {
+  background-image: url(/img/choice/21.png); }
+
+.choice.c2 {
+  background-image: url(/img/choice/12.png); }
+
+.choice.c2:hover {
+  background-image: url(/img/choice/22.png); }
+
+.choice.c3 {
+  background-image: url(/img/choice/13.png); }
+
+.choice.c3:hover {
+  background-image: url(/img/choice/23.png); }
+
+.choice.c4 {
+  background-image: url(/img/choice/14.png); }
+
+.choice.c4:hover {
+  background-image: url(/img/choice/24.png); }

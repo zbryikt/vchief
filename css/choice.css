@@ -1,0 +1,8 @@
+.choice {
+  width: 91px;
+  background-image: url(/img/choice/11.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .choice img {
+    width: 100%; }

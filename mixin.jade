@@ -1,0 +1,8 @@
+mixin choice(id)
+  div(class="choice c"+id)
+    img(src="/img/choice/empty.png")
+    .desc: block
+mixin question(size)
+  div(class="question "+size)
+    img(src="/img/question-"+size+".png")
+    .desc: block

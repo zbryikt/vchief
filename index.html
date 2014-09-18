@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <title>template</title>
+    <!-- libraries-->
+    <script type="text/javascript" src="/assets/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/d3js/3.3.11/d3.v3.min.js"></script>
+    <script type="text/javascript" src="/assets/angular/1.2.3/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="/assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- custom files-->
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/assets/misc/jquery.sticky.js"></script>
+  </head>
+  <body ng-app="main" ng-controller="main">
+    <div id="root">
+      <div id="puzzle"></div>
+      <div id="content">&nbsp;
+        <div class="question sm"><img src="/img/question-sm.png">
+          <div class="desc">台灣里長性別比 (男：女) ？
+          </div>
+        </div>
+        <div class="choices">
+          <div class="choice c1"><img src="/img/choice/empty.png">
+            <div class="desc">6 : 1
+            </div>
+          </div>
+          <div class="choice c2"><img src="/img/choice/empty.png">
+            <div class="desc">4 : 1
+            </div>
+          </div>
+          <div class="choice c3"><img src="/img/choice/empty.png">
+            <div class="desc">2 : 1
+            </div>
+          </div>
+          <div class="choice c4"><img src="/img/choice/empty.png">
+            <div class="desc">1 : 1
+            </div>
+          </div>
+        </div>
+        <div class="question lg"><img src="/img/question-lg.png">
+          <div class="desc">身為一個里長，為民服務也是很正常的。里長該做的職責有哪些呢?
+          </div>
+        </div>
+        <div class="question md"><img src="/img/question-md.png">
+          <div class="desc">里長該不會也被黨工滲透了？猜猜哪個黨的里長較多?
+          </div>
+        </div><br><br><br><br>
+      </div>
+    </div>
+  </body>
+</html>

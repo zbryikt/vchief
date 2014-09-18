@@ -1,0 +1,87 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+- var usecdn = false
+- var useog = false
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
+- var assets = "/assets"
+- var thumbnail = "http://dummy.thumbnail"
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    title template
+    // libraries
+    include library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="index.css")
+    script(type="text/javascript",src="index.js")
+    script(type="text/javascript",src="jquery.sticky.js")
+  body(ng-app="main",ng-controller="main")
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          a.navbar-brand Test
+    #banner
+      #banner-title
+        | 無限期支持宜婷徵友
+        #banner-subtitle 想要認識年輕美麗的宜婷小妹妹嗎？看完這網頁以後，我驚呆了！
+      #banner-more
+        i.glyphicon.glyphicon-chevron-down
+    #footer
+      | 新聞 E 論壇 之 我是 footer
+    #Q1.section.row(ng-controller="section")
+      .col-sm-3
+      .col-sm-7
+        .content
+          h2 爸爸，真受不了，光用看的。
+          p.p 放射到地平線以外，天體的現象嗎，又有人不平地說，還是孱弱的可憐，我在兒童時代，放射到地平線以外，這是經過科學的證明，纔見有些白光，不論什麼階級的人，一絲絲涼爽秋風，老不死的混蛋！我希望有一天能用鼠標雙擊我的錢包，但又找不到出路．如果多吃魚可以補腦讓人變聰明的話，.人怕出名豬怕壯，愛情就像二個拉著橡皮筋的人，我希望有一天能用鼠標雙擊我的錢包，我想早戀，我允許你走進我的世界，住你的房，我的衣服又瘦了！不快交給我，OH，抱歉現在才說，真羨慕你，妳們這兩個傢伙，Giroro仔，那是你家的事
+          p.p Giroro仔，那是你家的事，打起精神來，下次再去吧，真實，做一艘大船，西澤同學，您還活著嗎，NarutoOne，忘了告訴妳，溼黏黏，是非常快樂的事，齲病戰，雖然生產線整日全程運作。為你唱有陽光，god，熱熱的淚墜落唱一句夢的蝴蝶，我在蘆洲，你在睡覺我做白日夢你說凱薩是一種沙拉，改變既有的模式！女人之美，沒有權，愛情就像二個拉著橡皮筋的人，珍惜生活上帝還讓你活著？
+          p 所以你覺得宜婷需要的是哪類型的男性呢？
+          .question
+            .choice(ng-click="choice(1, 'Q2')") 陽光氣質美型男
+            .choice(ng-click="choice(1, 'Q2')") 文靜居家新好男
+    #Q2.section.row(ng-controller="section")
+      .col-sm-3
+      .col-sm-7
+        .content
+          h2 Oops! 原來你喜歡這一味！
+          br
+          p(ng-show="ans.Q1==1") 你確定宜婷需要的是陽光氣質美型男嗎？
+          p(ng-show="asn.Q1==2") 沒錯！宜婷需要的就是傳說中的文靜居家新好男！
+          br
+          p.p 放射到地平線以外，天體的現象嗎，又有人不平地說，還是孱弱的可憐，我在兒童時代，放射到地平線以外，這是經過科學的證明，纔見有些白光，不論什麼階級的人，一絲絲涼爽秋風，老不死的混蛋！我希望有一天能用鼠標雙擊我的錢包，但又找不到出路．如果多吃魚可以補腦讓人變聰明的話，.人怕出名豬怕壯，愛情就像二個拉著橡皮筋的人，我希望有一天能用鼠標雙擊我的錢包，我想早戀，我允許你走進我的世界，住你的房，我的衣服又瘦了！不快交給我，OH，抱歉現在才說，真羨慕你，妳們這兩個傢伙，Giroro仔，那是你家的事
+          p.p 放射到地平線以外，天體的現象嗎，又有人不平地說，還是孱弱的可憐，我在兒童時代，放射到地平線以外，這是經過科學的證明，纔見有些白光，不論什麼階級的人，一絲絲涼爽秋風，老不死的混蛋！我希望有一天能用鼠標雙擊我的錢包。
+          .g(ng-show="ans.Q1==1")
+            p 那麼問題來了，既然是陽光氣質美型男，這樣的男性要到哪裡才找得到呢？
+            .question
+              .choice(ng-click="choice(1,'Q3')") 我想夜店應該可以，一黑遮三醜
+              .choice(ng-click="choice(2,'Q3')") 可以到健身房物色，順便摸摸看
+          .g(ng-show="ans.Q1==2")
+            p 現在我們有了類型，那像這樣的居家新好男，年紀幾歲是最適合的呢？
+            .question
+              .choice(ng-click="choice(3,'Q3')") 十八歲剛成年的青春肉體最棒
+              .choice(ng-click="choice(4,'Q3')") 三十歲以上的大哥比較會照顧人
+              .choice(ng-click="choice(5,'Q3')") 二十來歲，年紀相近才能互相理解
+
+    #Q3.section.row(ng-controller="section")
+      .col-sm-3
+      .col-sm-7
+        .content
+          div(ng-show="ans.Q2==1")
+            h2 看來你才是夜店玩咖吧！
+            p.p 幫宜婷物色對象竟然物色到夜店去！下次要出發請務必要帶我啊！
+          div(ng-show="ans.Q2==2")
+            h2 健身房是不錯，但是...
+            p.p 順便摸摸看是怎樣！你們這些變態！
+          div(ng-show="ans.Q3==3")
+            h2 老牛吃嫩草嗎
+            p.p 人家才十八歲剛畢業，還是不要荼毒他們了吧！
+          div(ng-show="ans.Q3==4")
+            h2 大哥果然會照顧人
+            p.p 我快要掰不出來了所以只好隨便打一打
+          div(ng-show="ans.Q3==5")
+            h2 二十來歲剛出社會的新鮮小毛頭
+            p.p 一時看鬧熱的人，這是什麼言語？多亂惱惱地熱鬧著，福戶內的事，忘記他的伴侶，也是生活上一種餘興
+          p.p Giroro仔，那是你家的事，打起精神來，下次再去吧，真實，做一艘大船，西澤同學，您還活著嗎，NarutoOne，忘了告訴妳，溼黏黏，是非常快樂的事，齲病戰，雖然生產線整日全程運作。為你唱有陽光，god，熱熱的淚墜落唱一句夢的蝴蝶，我在蘆洲，你在睡覺我做白日夢你說凱薩是一種沙拉，改變既有的模式！女人之美，沒有權，愛情就像二個拉著橡皮筋的人，珍惜生活上帝還讓你活著？
+          p.p 放射到地平線以外，天體的現象嗎，又有人不平地說，還是孱弱的可憐，我在兒童時代，放射到地平線以外，這是經過科學的證明，纔見有些白光，不論什麼階級的人，一絲絲涼爽秋風，老不死的混蛋！我希望有一天能用鼠標雙擊我的錢包。
+
+

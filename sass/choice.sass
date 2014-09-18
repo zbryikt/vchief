@@ -1,0 +1,35 @@
+@import vars
+@import basic
+
+.choices
+  width: 388px
+  margin: 20px auto
+
+.choice
+  width: 91px
+  background-position: top left
+  background-repeat: no-repeat
+  background-size: cover
+  display: inline-block
+  cursor: pointer
+  position: relative
+  img
+    width: 100%
+  .desc
+    position: absolute
+    top: 20%
+    left: 0
+    text-align: center
+    width: 90%
+    margin: 5%
+
+@mixin choice-spec($id)
+  .choice.c#{$id}
+    background-image: url(/img/choice/1#{$id}.png)
+  .choice.c#{$id}:hover
+    background-image: url(/img/choice/2#{$id}.png)
+
+@include choice-spec(1)
+@include choice-spec(2)
+@include choice-spec(3)
+@include choice-spec(4)
