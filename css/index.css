@@ -81,7 +81,7 @@ html, body {
     left: 50%;
     bottom: -40px;
     margin-left: -13px;
-    background-image: url(/img/arrow-down.png);
+    background-image: url(../img/arrow-down.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -96,52 +96,52 @@ html, body {
   opacity: 1; }
 
 .choice.c1 {
-  background-image: url(/img/choice/11.png); }
+  background-image: url(../img/choice/11.png); }
 
 .choice.c1:hover {
-  background-image: url(/img/choice/21.png); }
+  background-image: url(../img/choice/21.png); }
 
 .choice.c1.chosen {
-  background-image: url(/img/choice/41.png); }
+  background-image: url(../img/choice/41.png); }
 
 .choice.c1.chosen.answer {
-  background-image: url(/img/choice/31.png); }
+  background-image: url(../img/choice/31.png); }
 
 .choice.c2 {
-  background-image: url(/img/choice/12.png); }
+  background-image: url(../img/choice/12.png); }
 
 .choice.c2:hover {
-  background-image: url(/img/choice/22.png); }
+  background-image: url(../img/choice/22.png); }
 
 .choice.c2.chosen {
-  background-image: url(/img/choice/42.png); }
+  background-image: url(../img/choice/42.png); }
 
 .choice.c2.chosen.answer {
-  background-image: url(/img/choice/32.png); }
+  background-image: url(../img/choice/32.png); }
 
 .choice.c3 {
-  background-image: url(/img/choice/13.png); }
+  background-image: url(../img/choice/13.png); }
 
 .choice.c3:hover {
-  background-image: url(/img/choice/23.png); }
+  background-image: url(../img/choice/23.png); }
 
 .choice.c3.chosen {
-  background-image: url(/img/choice/43.png); }
+  background-image: url(../img/choice/43.png); }
 
 .choice.c3.chosen.answer {
-  background-image: url(/img/choice/33.png); }
+  background-image: url(../img/choice/33.png); }
 
 .choice.c4 {
-  background-image: url(/img/choice/14.png); }
+  background-image: url(../img/choice/14.png); }
 
 .choice.c4:hover {
-  background-image: url(/img/choice/24.png); }
+  background-image: url(../img/choice/24.png); }
 
 .choice.c4.chosen {
-  background-image: url(/img/choice/44.png); }
+  background-image: url(../img/choice/44.png); }
 
 .choice.c4.chosen.answer {
-  background-image: url(/img/choice/34.png); }
+  background-image: url(../img/choice/34.png); }
 
 .section {
   display: none; }

@@ -11,9 +11,9 @@ mixin choice(id, next, ans)
   else 
     - var ans = " answer"
   div(class="choice c"+id+ans,ng-class="{'chosen': chosen=="+id+"}",ng-click="choice("+id+",'"+next+"')")
-    img(src="/img/choice/empty.png")
+    img(src="img/choice/empty.png")
     .desc: block
 mixin question(size)
   div(class="question "+size)
-    img(src="/img/question-"+size+".png")
+    img(src="img/question-"+size+".png")
     .desc: block
