@@ -1,5 +1,16 @@
-mixin choice(id)
-  div(class="choice c"+id)
+mixin section(id)
+  .section(ng-controller="section",id=id)
+    p.detail {{randomFact}}
+    br
+    p {{randomFact}}
+    block
+
+mixin choice(id, next, ans)
+  if !ans
+    - var ans = ""
+  else 
+    - var ans = " answer"
+  div(class="choice c"+id+ans,ng-class="{'chosen': chosen=="+id+"}",ng-click="choice("+id+",'"+next+"')")
     img(src="/img/choice/empty.png")
     .desc: block
 mixin question(size)

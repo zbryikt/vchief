@@ -11,43 +11,209 @@
     <script type="text/javascript" src="/assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <!-- custom files-->
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <script type="text/javascript" src="/sentence-stat.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/library.js"></script>
     <script type="text/javascript" src="/assets/misc/jquery.sticky.js"></script>
   </head>
   <body ng-app="main" ng-controller="main">
     <div id="root">
       <div id="puzzle"></div>
       <div id="content">&nbsp;
-        <div class="question sm"><img src="/img/question-sm.png">
-          <div class="desc">台灣里長性別比 (男：女) ？
+        <div ng-controller="section" id="Q1" class="section">
+          <p class="detail">{{randomFact}}</p><br>
+          <p>{{randomFact}}</p>
+          <div class="question sm"><img src="/img/question-sm.png">
+            <div class="desc">台灣里長性別比 (男：女) ？
+            </div>
+          </div>
+          <div class="choices">
+            <div ng-class="{'chosen': chosen==1}" ng-click="choice(1,'Q2')" class="choice c1 answer"><img src="/img/choice/empty.png">
+              <div class="desc">6 : 1
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==2}" ng-click="choice(2,'Q2')" class="choice c2"><img src="/img/choice/empty.png">
+              <div class="desc">4 : 1
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==3}" ng-click="choice(3,'Q2')" class="choice c3"><img src="/img/choice/empty.png">
+              <div class="desc">2 : 1
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==4}" ng-click="choice(4,'Q2')" class="choice c4"><img src="/img/choice/empty.png">
+              <div class="desc">1 : 1
+              </div>
+            </div>
           </div>
         </div>
-        <div class="choices">
-          <div class="choice c1"><img src="/img/choice/empty.png">
-            <div class="desc">6 : 1
+        <div ng-controller="section" id="Q2" class="section">
+          <p class="detail">{{randomFact}}</p><br>
+          <p>{{randomFact}}</p>
+          <div class="question md"><img src="/img/question-md.png">
+            <div class="desc">大家口中的「里長伯」、「里長姨」的平均年齡究竟是?
             </div>
           </div>
-          <div class="choice c2"><img src="/img/choice/empty.png">
-            <div class="desc">4 : 1
+          <div class="choices">
+            <div ng-class="{'chosen': chosen==1}" ng-click="choice(1,'Q3')" class="choice c1"><img src="/img/choice/empty.png">
+              <div class="desc">35-44 <br>歲
+              </div>
             </div>
-          </div>
-          <div class="choice c3"><img src="/img/choice/empty.png">
-            <div class="desc">2 : 1
+            <div ng-class="{'chosen': chosen==2}" ng-click="choice(2,'Q3')" class="choice c2"><img src="/img/choice/empty.png">
+              <div class="desc">45-54<br>歲
+              </div>
             </div>
-          </div>
-          <div class="choice c4"><img src="/img/choice/empty.png">
-            <div class="desc">1 : 1
+            <div ng-class="{'chosen': chosen==3}" ng-click="choice(3,'Q3')" class="choice c3 answer"><img src="/img/choice/empty.png">
+              <div class="desc">55-64<br>歲
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==4}" ng-click="choice(4,'Q3')" class="choice c4"><img src="/img/choice/empty.png">
+              <div class="desc">65-74<br>歲
+              </div>
             </div>
           </div>
         </div>
-        <div class="question lg"><img src="/img/question-lg.png">
-          <div class="desc">身為一個里長，為民服務也是很正常的。里長該做的職責有哪些呢?
+        <div ng-controller="section" id="Q3" class="section">
+          <p class="detail">{{randomFact}}</p><br>
+          <p>{{randomFact}}</p>
+          <div class="question md"><img src="/img/question-md.png">
+            <div class="desc">里長該不會也被黨工滲透了？猜猜哪個黨的里長較多?
+            </div>
+          </div>
+          <div class="choices">
+            <div ng-class="{'chosen': chosen==1}" ng-click="choice(1,'Q4')" class="choice c1"><img src="/img/choice/empty.png">
+              <div class="desc">國民黨
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==2}" ng-click="choice(2,'Q4')" class="choice c2"><img src="/img/choice/empty.png">
+              <div class="desc">民進黨
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==3}" ng-click="choice(3,'Q4')" class="choice c3"><img src="/img/choice/empty.png">
+              <div class="desc">親民黨
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==4}" ng-click="choice(4,'Q4')" class="choice c4 answer"><img src="/img/choice/empty.png">
+              <div class="desc">沒有黨
+              </div>
+            </div>
           </div>
         </div>
-        <div class="question md"><img src="/img/question-md.png">
-          <div class="desc">里長該不會也被黨工滲透了？猜猜哪個黨的里長較多?
+        <div ng-controller="section" id="Q4" class="section">
+          <p class="detail">{{randomFact}}</p><br>
+          <p>{{randomFact}}</p>
+          <div class="question lg"><img src="/img/question-lg.png">
+            <div class="desc">身為一個里長，為民服務也是很正常的。里長該做的職責有哪些呢?
+            </div>
           </div>
-        </div><br><br><br><br>
+          <div class="choices">
+            <div ng-class="{'chosen': chosen==1}" ng-click="choice(1,'Q5')" class="choice c1"><img src="/img/choice/empty.png">
+              <div class="desc">廣播里政策
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==2}" ng-click="choice(2,'Q5')" class="choice c2"><img src="/img/choice/empty.png">
+              <div class="desc">幫里民喬事情
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==3}" ng-click="choice(3,'Q5')" class="choice c3"><img src="/img/choice/empty.png">
+              <div class="desc">主辦里團康活動
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==4}" ng-click="choice(4,'Q5')" class="choice c4 answer"><img src="/img/choice/empty.png">
+              <div class="desc">跟里民有關的一手包辦
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-controller="section" id="Q5" class="section">
+          <p class="detail">{{randomFact}}</p><br>
+          <p>{{randomFact}}</p>
+          <div class="question lg"><img src="/img/question-lg.png">
+            <div class="desc">市長只能連任一次，指派的區長則是可連任二次，那猜猜看里長可以連任幾次?
+            </div>
+          </div>
+          <div class="choices">
+            <div ng-class="{'chosen': chosen==1}" ng-click="choice(1,'Q6')" class="choice c1"><img src="/img/choice/empty.png">
+              <div class="desc">1次
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==2}" ng-click="choice(2,'Q6')" class="choice c2"><img src="/img/choice/empty.png">
+              <div class="desc">2次
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==3}" ng-click="choice(3,'Q6')" class="choice c3"><img src="/img/choice/empty.png">
+              <div class="desc">3次
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==4}" ng-click="choice(4,'Q6')" class="choice c4 answer"><img src="/img/choice/empty.png">
+              <div class="desc">無限次
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-controller="section" id="Q6" class="section">
+          <p class="detail">{{randomFact}}</p><br>
+          <p>{{randomFact}}</p>
+          <div class="question md"><img src="/img/question-md.png">
+            <div class="desc">里長不拿薪水，那麼一個月可以拿多少補助呢?
+            </div>
+          </div>
+          <div class="choices">
+            <div ng-class="{'chosen': chosen==1}" ng-click="choice(1,'Q7')" class="choice c1"><img src="/img/choice/empty.png">
+              <div class="desc">兩萬五
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==2}" ng-click="choice(2,'Q7')" class="choice c2 answer"><img src="/img/choice/empty.png">
+              <div class="desc">四萬五
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==3}" ng-click="choice(3,'Q7')" class="choice c3"><img src="/img/choice/empty.png">
+              <div class="desc">六萬五
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==4}" ng-click="choice(4,'Q7')" class="choice c4"><img src="/img/choice/empty.png">
+              <div class="desc">八萬五
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-controller="section" id="Q7" class="section">
+          <p class="detail">{{randomFact}}</p><br>
+          <p>{{randomFact}}</p>
+          <div class="question md"><img src="/img/question-md.png">
+            <div class="desc">台灣這麼小，總鄰里數會是多少呢?
+            </div>
+          </div>
+          <div class="choices">
+            <div ng-class="{'chosen': chosen==1}" ng-click="choice(1,'Q8')" class="choice c1"><img src="/img/choice/empty.png">
+              <div class="desc">
+                <div>4000 至</div>
+                <div>5000 個</div>
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==2}" ng-click="choice(2,'Q8')" class="choice c2 answer"><img src="/img/choice/empty.png">
+              <div class="desc">
+                <div>5000 至</div>
+                <div>6000 個</div>
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==3}" ng-click="choice(3,'Q8')" class="choice c3"><img src="/img/choice/empty.png">
+              <div class="desc">
+                <div>6000 至</div>
+                <div>7000 個</div>
+              </div>
+            </div>
+            <div ng-class="{'chosen': chosen==4}" ng-click="choice(4,'Q8')" class="choice c4"><img src="/img/choice/empty.png">
+              <div class="desc">
+                <div>7000 至</div>
+                <div>8000 個</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-controller="section" id="Q8" class="section">
+          <p class="detail">{{randomFact}}</p><br>
+          <p>{{randomFact}}</p>
+        </div>
       </div>
     </div>
   </body>

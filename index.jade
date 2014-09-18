@@ -14,23 +14,88 @@ html(lang="en")
     include library.jade
     // custom files
     link(rel="stylesheet",type="text/css",href="/css/index.css")
+    script(type="text/javascript",src="/sentence-stat.js")
     script(type="text/javascript",src="/js/index.js")
+    script(type="text/javascript",src="/js/library.js")
     script(type="text/javascript",src="/assets/misc/jquery.sticky.js")
   body(ng-app="main",ng-controller="main")
     #root
       #puzzle
       #content
         | &nbsp;
-        +question('sm') 台灣里長性別比 (男：女) ？
-        .choices
-          +choice('1') 6 : 1
-          +choice('2') 4 : 1
-          +choice('3') 2 : 1
-          +choice('4') 1 : 1
+        +section('Q1')
+          +question('sm') 台灣里長性別比 (男：女) ？
+          .choices
+            +choice('1', 'Q2', true) 6 : 1
+            +choice('2', 'Q2') 4 : 1
+            +choice('3', 'Q2') 2 : 1
+            +choice('4', 'Q2') 1 : 1
 
-        +question('lg') 身為一個里長，為民服務也是很正常的。里長該做的職責有哪些呢?
-        +question('md') 里長該不會也被黨工滲透了？猜猜哪個黨的里長較多?
-        br
-        br
-        br
-        br
+        +section('Q2')
+          +question('md') 大家口中的「里長伯」、「里長姨」的平均年齡究竟是?
+          .choices
+            +choice('1', 'Q3') 
+              | 35-44 
+              br
+              | 歲
+            +choice('2', 'Q3')
+              | 45-54
+              br
+              | 歲
+            +choice('3', 'Q3', true)
+              | 55-64
+              br
+              | 歲
+            +choice('4', 'Q3') 
+              | 65-74
+              br
+              | 歲
+
+        +section('Q3')
+          +question('md') 里長該不會也被黨工滲透了？猜猜哪個黨的里長較多?
+          .choices
+            +choice('1', 'Q4') 國民黨
+            +choice('2', 'Q4') 民進黨
+            +choice('3', 'Q4') 親民黨
+            +choice('4', 'Q4', true) 沒有黨
+
+        +section('Q4')
+          +question('lg') 身為一個里長，為民服務也是很正常的。里長該做的職責有哪些呢?
+          .choices
+            +choice('1', 'Q5') 廣播里政策
+            +choice('2', 'Q5') 幫里民喬事情
+            +choice('3', 'Q5') 主辦里團康活動
+            +choice('4', 'Q5', true) 跟里民有關的一手包辦
+
+        +section('Q5')
+          +question('lg') 市長只能連任一次，指派的區長則是可連任二次，那猜猜看里長可以連任幾次?
+          .choices
+            +choice('1', 'Q6') 1次
+            +choice('2', 'Q6') 2次
+            +choice('3', 'Q6') 3次
+            +choice('4', 'Q6', true) 無限次
+
+        +section('Q6')
+          +question('md') 里長不拿薪水，那麼一個月可以拿多少補助呢?
+          .choices
+            +choice('1', 'Q7') 兩萬五
+            +choice('2', 'Q7', true) 四萬五
+            +choice('3', 'Q7') 六萬五
+            +choice('4', 'Q7') 八萬五
+
+        +section('Q7')
+          +question('md') 台灣這麼小，總鄰里數會是多少呢?
+          .choices
+            +choice('1', 'Q8')
+              div 4000 至
+              div 5000 個
+            +choice('2', 'Q8', true)
+              div 5000 至
+              div 6000 個
+            +choice('3', 'Q8')
+              div 6000 至
+              div 7000 個
+            +choice('4', 'Q8')
+              div 7000 至
+              div 8000 個
+        +section('Q8')

@@ -3,7 +3,7 @@
 
 .choices
   width: 388px
-  margin: 20px auto
+  margin: 20px auto 60px
 
 .choice
   width: 91px
@@ -17,17 +17,42 @@
     width: 100%
   .desc
     position: absolute
-    top: 20%
+    top: 40%
+    @include transform(translateY(-50%))
     left: 0
     text-align: center
-    width: 90%
-    margin: 5%
+    width: 86%
+    margin: 7%
+    font-size: 0.9em
+
+  &.answer:after
+    position: absolute
+    content: " "
+    display: block
+    width: 26px
+    height: 22px
+    left: 50%
+    bottom: -40px
+    margin-left: -13px
+    background-image: url(/img/arrow-down.png)
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    opacity: 0
+    @include transition(opacity 1s)
+
+.section.finish.active .choice.answer:after
+  opacity: 1
 
 @mixin choice-spec($id)
   .choice.c#{$id}
     background-image: url(/img/choice/1#{$id}.png)
   .choice.c#{$id}:hover
     background-image: url(/img/choice/2#{$id}.png)
+  .choice.c#{$id}.chosen
+    background-image: url(/img/choice/4#{$id}.png)
+  .choice.c#{$id}.chosen.answer
+    background-image: url(/img/choice/3#{$id}.png)
 
 @include choice-spec(1)
 @include choice-spec(2)

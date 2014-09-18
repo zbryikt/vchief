@@ -7,15 +7,20 @@ html, body {
 
 #puzzle {
   width: 50%;
-  background: #fff; }
+  height: 100%;
+  background: #00a7b9;
+  position: fixed;
+  top: 0;
+  left: 0; }
 
 #content {
   width: 50%;
   margin-left: 50%;
-  background: #e6d471; }
+  background: #e6d471;
+  padding: 100px 0; }
 
 .question {
-  margin: 20px auto;
+  margin: 20px auto 60px;
   background: none;
   width: 70%;
   position: relative;
@@ -42,7 +47,7 @@ html, body {
 
 .choices {
   width: 388px;
-  margin: 20px auto; }
+  margin: 20px auto 60px; }
 
 .choice {
   width: 91px;
@@ -56,11 +61,39 @@ html, body {
     width: 100%; }
   .choice .desc {
     position: absolute;
-    top: 20%;
+    top: 40%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
     left: 0;
     text-align: center;
-    width: 90%;
-    margin: 5%; }
+    width: 86%;
+    margin: 7%;
+    font-size: 0.9em; }
+  .choice.answer:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    width: 26px;
+    height: 22px;
+    left: 50%;
+    bottom: -40px;
+    margin-left: -13px;
+    background-image: url(/img/arrow-down.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    -ms-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s; }
+
+.section.finish.active .choice.answer:after {
+  opacity: 1; }
 
 .choice.c1 {
   background-image: url(/img/choice/11.png); }
@@ -68,11 +101,23 @@ html, body {
 .choice.c1:hover {
   background-image: url(/img/choice/21.png); }
 
+.choice.c1.chosen {
+  background-image: url(/img/choice/41.png); }
+
+.choice.c1.chosen.answer {
+  background-image: url(/img/choice/31.png); }
+
 .choice.c2 {
   background-image: url(/img/choice/12.png); }
 
 .choice.c2:hover {
   background-image: url(/img/choice/22.png); }
+
+.choice.c2.chosen {
+  background-image: url(/img/choice/42.png); }
+
+.choice.c2.chosen.answer {
+  background-image: url(/img/choice/32.png); }
 
 .choice.c3 {
   background-image: url(/img/choice/13.png); }
@@ -80,8 +125,37 @@ html, body {
 .choice.c3:hover {
   background-image: url(/img/choice/23.png); }
 
+.choice.c3.chosen {
+  background-image: url(/img/choice/43.png); }
+
+.choice.c3.chosen.answer {
+  background-image: url(/img/choice/33.png); }
+
 .choice.c4 {
   background-image: url(/img/choice/14.png); }
 
 .choice.c4:hover {
   background-image: url(/img/choice/24.png); }
+
+.choice.c4.chosen {
+  background-image: url(/img/choice/44.png); }
+
+.choice.c4.chosen.answer {
+  background-image: url(/img/choice/34.png); }
+
+.section {
+  display: none; }
+  .section p {
+    width: 80%;
+    margin: 20px auto 40px;
+    text-indent: 1em;
+    letter-spacing: 2px;
+    line-height: 1.6em; }
+  .section p.detail {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 30px 20px;
+    margin-top: 40px; }
+
+.section.active {
+  display: block; }
