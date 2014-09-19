@@ -22,4 +22,4 @@ angular.module \main, <[]>
     for i from 1 to 4
       for j from 1 to 4
         img = new Image!
-        img.src = "../img/choice/#i#j.png"
+        img.src = "img/choice/#i#j.png"

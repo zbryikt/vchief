@@ -37,7 +37,7 @@ x$.controller('main', ['$scope', 'randomFact'].concat(function($scope, randomFac
     for (j$ = 1; j$ <= 4; ++j$) {
       j = j$;
       img = new Image();
-      lresult$.push(img.src = "../img/choice/" + i + j + ".png");
+      lresult$.push(img.src = "img/choice/" + i + j + ".png");
     }
     results$.push(lresult$);
   }
