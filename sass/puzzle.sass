@@ -1,6 +1,21 @@
 @import vars
 @import basic
 
+#puzzle
+  width: 50%
+  height: 100%
+  background: #80d3dc
+  position: fixed
+  top: 0
+  left: 0
+  overflow: hidden
+  img.bk
+    position: absolute
+    top: 0
+    right: 0
+    width: 100%
+    z-index: index($order, puzzlebk)
+
 #puzzle .ib
   width: 80%
   margin: 10%
@@ -12,5 +27,6 @@
     left: 0
     opacity: 0
     @include transition(all 0.5s)
+    z-index: index($order, puzzleblock)
   img.active
     opacity: 1
