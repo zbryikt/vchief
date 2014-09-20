@@ -30,7 +30,7 @@ x$.controller('section', ['$scope', '$element', 'skolto'].concat(function($scope
     }, 100);
   };
 }));
-x$.controller('main', ['$scope', 'randomFact'].concat(function($scope, randomFact){
+x$.controller('main', ['$scope', 'randomFact', 'skolto'].concat(function($scope, randomFact, skolto){
   var addsound, i$, i, img, lresult$, j$, j, results$ = [];
   setTimeout(function(){
     return $('#footer').sticky({
@@ -40,6 +40,9 @@ x$.controller('main', ['$scope', 'randomFact'].concat(function($scope, randomFac
   $scope.randomFact = randomFact();
   $scope.ans = {
     Q1: {}
+  };
+  $scope.skolto = function(nid){
+    return skolto(nid);
   };
   addsound = function(name){
     var node, ref$;

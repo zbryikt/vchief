@@ -185,3 +185,42 @@ html, body {
     z-index: 2; }
   #puzzle .ib img.active {
     opacity: 1; }
+
+#menu {
+  width: 44px;
+  height: 397px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-repeat: no-repeat;
+  z-index: 3; }
+  #menu .item {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/menu-disabled.png); }
+  #menu .item.active {
+    background-image: url(../img/menu.png);
+    cursor: pointer; }
+  #menu .item.active:hover {
+    background-image: url(../img/menu-invert.png); }
+  #menu .item:nth-of-type(1) {
+    background-position: 0 0px; }
+  #menu .item:nth-of-type(2) {
+    background-position: 0 -44px; }
+  #menu .item:nth-of-type(3) {
+    background-position: 0 -88px; }
+  #menu .item:nth-of-type(4) {
+    background-position: 0 -132px; }
+  #menu .item:nth-of-type(5) {
+    background-position: 0 -176px; }
+  #menu .item:nth-of-type(6) {
+    background-position: 0 -220px; }
+  #menu .item:nth-of-type(7) {
+    background-position: 0 -264px; }
+  #menu .item:nth-of-type(8) {
+    background-position: 0 -308px; }
+  #menu .item:nth-of-type(9) {
+    background-position: 0 -352px; }

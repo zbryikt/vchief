@@ -1,0 +1,35 @@
+@import vars
+@import basic
+
+=itembk($idx)
+  .item:nth-of-type(#{$idx})
+    background-position: 0 ($idx - 1) * -44px
+#menu
+  width: 44px
+  height: 397px
+  top: 0
+  left: 0
+  position: fixed
+  background-repeat: no-repeat
+  z-index: index($order, menu)
+  .item
+    display: block
+    width: 44px
+    height: 44px
+    background-position: center center
+    background-repeat: no-repeat
+    background-image: url(../img/menu-disabled.png)
+  .item.active
+    background-image: url(../img/menu.png)
+    cursor: pointer
+  .item.active:hover
+    background-image: url(../img/menu-invert.png)
+  @include itembk(1)
+  @include itembk(2)
+  @include itembk(3)
+  @include itembk(4)
+  @include itembk(5)
+  @include itembk(6)
+  @include itembk(7)
+  @include itembk(8)
+  @include itembk(9)

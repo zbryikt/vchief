@@ -1,4 +1,3 @@
-
 angular.module \main, <[]>
 
   ..controller \section, <[$scope $element skolto]> ++ ($scope, $element, skolto) ->
@@ -20,10 +19,11 @@ angular.module \main, <[]>
           ..load!
           ..play!
       , 100
-  ..controller \main, <[$scope randomFact]> ++ ($scope, randomFact) ->
+  ..controller \main, <[$scope randomFact skolto]> ++ ($scope, randomFact, skolto) ->
     setTimeout (-> $(\#footer)sticky topSpacing: 0), 0
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
+    $scope.skolto = (nid) -> skolto nid
     addsound = (name) ->
       node = document.createElement \audio
       node.appendChild(document.createElement(\source) <<< src: "sound/#name.ogg", type: "audio/ogg")
