@@ -18,7 +18,10 @@
   </head>
   <body ng-app="main" ng-controller="main">
     <div id="root">
-      <div id="puzzle"></div>
+      <div id="puzzle">
+        <div class="ib"><img src="img/chief/Q1.png" ng-show="ans['Q1']"><img src="img/chief/Q2.png" ng-show="ans['Q2']"><img src="img/chief/Q3.png" ng-show="ans['Q3']"><img src="img/chief/Q4.png" ng-show="ans['Q4']"><img src="img/chief/Q5.png" ng-show="ans['Q5']"><img src="img/chief/Q6.png" ng-show="ans['Q6']"><img src="img/chief/Q7.png" ng-show="ans['Q7']"><img src="img/chief/Q8.png" ng-show="ans['Q8']">
+        </div>
+      </div>
       <div id="content">&nbsp;
         <div ng-controller="section" id="Q1" class="section">
           <p class="detail">{{randomFact}}</p><br>

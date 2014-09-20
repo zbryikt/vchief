@@ -159,3 +159,13 @@ html, body {
 
 .section.active {
   display: block; }
+
+#puzzle .ib {
+  width: 80%;
+  margin: 10%;
+  position: relative; }
+  #puzzle .ib img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
