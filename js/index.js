@@ -42,7 +42,7 @@ x$.controller('main', ['$scope', 'randomFact', 'skolto'].concat(function($scope,
     Q1: {}
   };
   $scope.skolto = function(nid){
-    return skolto(nid);
+    return skolto(nid, 0);
   };
   addsound = function(name){
     var node, ref$;

@@ -23,7 +23,7 @@ angular.module \main, <[]>
     setTimeout (-> $(\#footer)sticky topSpacing: 0), 0
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
-    $scope.skolto = (nid) -> skolto nid
+    $scope.skolto = (nid) -> skolto nid, 0
     addsound = (name) ->
       node = document.createElement \audio
       node.appendChild(document.createElement(\source) <<< src: "sound/#name.ogg", type: "audio/ogg")

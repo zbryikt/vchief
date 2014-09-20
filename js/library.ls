@@ -1,7 +1,7 @@
 angular.module \main
 
-  ..factory \skolto, -> (des) ->
-    <- setTimeout _, 500
+  ..factory \skolto, -> (des, delay=500) ->
+    <- setTimeout _, delay
     target = $("##des")
     $("html,body").animate({scrollTop: target.offset!top}, 500)
 

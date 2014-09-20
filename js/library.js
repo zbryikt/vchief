@@ -2,14 +2,15 @@
 var x$;
 x$ = angular.module('main');
 x$.factory('skolto', function(){
-  return function(des){
+  return function(des, delay){
+    delay == null && (delay = 500);
     return setTimeout(function(){
       var target;
       target = $("#" + des);
       return $("html,body").animate({
         scrollTop: target.offset().top
       }, 500);
-    }, 500);
+    }, delay);
   };
 });
 x$.factory('randomFact', function($http){
