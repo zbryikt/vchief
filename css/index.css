@@ -96,7 +96,10 @@ html, body {
 .choice.c1.chosen {
   background-image: url(../img/choice/41.png); }
 
-.choice.c1.chosen.answer {
+.choice.c1.chosen.answer.fill {
+  background-image: url(../img/choice/51.png); }
+
+.choice.c1.fill.answer {
   background-image: url(../img/choice/31.png); }
 
 .choice.c2 {
@@ -108,7 +111,10 @@ html, body {
 .choice.c2.chosen {
   background-image: url(../img/choice/42.png); }
 
-.choice.c2.chosen.answer {
+.choice.c2.chosen.answer.fill {
+  background-image: url(../img/choice/52.png); }
+
+.choice.c2.fill.answer {
   background-image: url(../img/choice/32.png); }
 
 .choice.c3 {
@@ -120,7 +126,10 @@ html, body {
 .choice.c3.chosen {
   background-image: url(../img/choice/43.png); }
 
-.choice.c3.chosen.answer {
+.choice.c3.chosen.answer.fill {
+  background-image: url(../img/choice/53.png); }
+
+.choice.c3.fill.answer {
   background-image: url(../img/choice/33.png); }
 
 .choice.c4 {
@@ -132,7 +141,10 @@ html, body {
 .choice.c4.chosen {
   background-image: url(../img/choice/44.png); }
 
-.choice.c4.chosen.answer {
+.choice.c4.chosen.answer.fill {
+  background-image: url(../img/choice/54.png); }
+
+.choice.c4.fill.answer {
   background-image: url(../img/choice/34.png); }
 
 .section {

@@ -3,7 +3,7 @@ var x$;
 x$ = angular.module('main', []);
 x$.controller('section', ['$scope', '$element', 'skolto'].concat(function($scope, $element, skolto){
   var id;
-  id = $element.attr('id');
+  $scope.cid = id = $element.attr('id');
   $scope.chosen = 0;
   $scope.$watch('$parent.ans', function(){
     if (!isNaN($scope.$parent.ans[id])) {
@@ -60,7 +60,7 @@ x$.controller('main', ['$scope', 'randomFact', 'skolto'].concat(function($scope,
     img = new Image();
     img.src = "img/chief/Q" + i + ".png";
   }
-  for (i$ = 1; i$ <= 4; ++i$) {
+  for (i$ = 1; i$ <= 5; ++i$) {
     i = i$;
     lresult$ = [];
     for (j$ = 1; j$ <= 4; ++j$) {

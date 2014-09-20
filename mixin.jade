@@ -5,6 +5,7 @@ mixin section(id)
     p.detail {{randomFact}}
     br
     p {{randomFact}}
+    div(id=id+"-Q")
     block
 
 mixin choice(id, next, ans)
@@ -14,7 +15,7 @@ mixin choice(id, next, ans)
   else 
     - var ans = " answer"
     - var correct = true
-  div(class="choice c"+id+ans,ng-class="{'chosen': chosen=="+id+"}",ng-click="choice("+id+",'"+next+"',"+correct+")")
+  div(class="choice c"+id+ans,ng-class="{'chosen': chosen=="+id+",'fill': ans['"+next+"']}",ng-click="choice("+id+",'"+next+"',"+correct+")")
     img(src="img/choice/empty.png")
     .desc: block
 mixin question(size)

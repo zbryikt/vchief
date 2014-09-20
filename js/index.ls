@@ -1,7 +1,7 @@
 angular.module \main, <[]>
 
   ..controller \section, <[$scope $element skolto]> ++ ($scope, $element, skolto) ->
-    id = $element.attr \id
+    $scope.cid = id = $element.attr \id
     $scope.chosen = 0
     $scope.$watch '$parent.ans', (-> 
       if !isNaN($scope.$parent.ans[id]) => $element.addClass \finish
@@ -36,7 +36,7 @@ angular.module \main, <[]>
     for i from 1 to 8
       img = new Image!
       img.src = "img/chief/Q#i.png"
-    for i from 1 to 4
+    for i from 1 to 5
       for j from 1 to 4
         img = new Image!
         img.src = "img/choice/#i#j.png"
