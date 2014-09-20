@@ -1,5 +1,5 @@
 mixin img(id)
-  img(src="img/chief/"+id+".png",ng-show="ans['"+id+"']")
+  img(src="img/chief/"+id+".png",ng-class="{'active':ans['"+id+"']}")
 mixin section(id)
   .section(ng-controller="section",id=id)
     p.detail {{randomFact}}

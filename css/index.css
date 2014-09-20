@@ -168,4 +168,12 @@ html, body {
     width: 100%;
     position: absolute;
     top: 0;
-    left: 0; }
+    left: 0;
+    opacity: 0;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
+  #puzzle .ib img.active {
+    opacity: 1; }
