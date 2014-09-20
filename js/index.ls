@@ -8,16 +8,30 @@ angular.module \main, <[]>
       if !isNaN($scope.$parent.ans[id]) => $element.addClass \finish
       if $scope.$parent.ans[id] => $element.addClass \active
     ), true
-    $scope.choice = (value, nid) -> 
+    $scope.choice = (value, nid, ans) -> 
       $scope.chosen = value
       $scope.$parent.ans[id] = value
       $scope.$parent.ans[nid] = {}
       skolto nid
-
+      name = if ans => \right else \wrong
+      console.log $scope.$parent.sound[name].play
+      setTimeout ->
+        $scope.$parent.sound[name]
+          ..load!
+          ..play!
+      , 100
   ..controller \main, <[$scope randomFact]> ++ ($scope, randomFact) ->
     setTimeout (-> $(\#footer)sticky topSpacing: 0), 0
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
+    addsound = (name) ->
+      node = document.createElement \audio
+      node.appendChild(document.createElement(\source) <<< src: "sound/#name.ogg", type: "audio/ogg")
+      node.appendChild(document.createElement(\source) <<< src: "sound/#name.mp3", type: "audio/mpeg")
+      node
+    $scope.sound = do
+      wrong: addsound \wrong
+      right: addsound \right
     # preload image
     for i from 1 to 8
       img = new Image!

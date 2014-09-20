@@ -10,9 +10,11 @@ mixin section(id)
 mixin choice(id, next, ans)
   if !ans
     - var ans = ""
+    - var correct = false
   else 
     - var ans = " answer"
-  div(class="choice c"+id+ans,ng-class="{'chosen': chosen=="+id+"}",ng-click="choice("+id+",'"+next+"')")
+    - var correct = true
+  div(class="choice c"+id+ans,ng-class="{'chosen': chosen=="+id+"}",ng-click="choice("+id+",'"+next+"',"+correct+")")
     img(src="img/choice/empty.png")
     .desc: block
 mixin question(size)

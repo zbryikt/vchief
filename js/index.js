@@ -13,15 +13,25 @@ x$.controller('section', ['$scope', '$element', 'skolto'].concat(function($scope
       return $element.addClass('active');
     }
   }, true);
-  return $scope.choice = function(value, nid){
+  return $scope.choice = function(value, nid, ans){
+    var name;
     $scope.chosen = value;
     $scope.$parent.ans[id] = value;
     $scope.$parent.ans[nid] = {};
-    return skolto(nid);
+    skolto(nid);
+    name = ans ? 'right' : 'wrong';
+    console.log($scope.$parent.sound[name].play);
+    return setTimeout(function(){
+      var x$;
+      x$ = $scope.$parent.sound[name];
+      x$.load();
+      x$.play();
+      return x$;
+    }, 100);
   };
 }));
 x$.controller('main', ['$scope', 'randomFact'].concat(function($scope, randomFact){
-  var i$, i, img, lresult$, j$, j, results$ = [];
+  var addsound, i$, i, img, lresult$, j$, j, results$ = [];
   setTimeout(function(){
     return $('#footer').sticky({
       topSpacing: 0
@@ -30,6 +40,17 @@ x$.controller('main', ['$scope', 'randomFact'].concat(function($scope, randomFac
   $scope.randomFact = randomFact();
   $scope.ans = {
     Q1: {}
+  };
+  addsound = function(name){
+    var node, ref$;
+    node = document.createElement('audio');
+    node.appendChild((ref$ = document.createElement('source'), ref$.src = "sound/" + name + ".ogg", ref$.type = "audio/ogg", ref$));
+    node.appendChild((ref$ = document.createElement('source'), ref$.src = "sound/" + name + ".mp3", ref$.type = "audio/mpeg", ref$));
+    return node;
+  };
+  $scope.sound = {
+    wrong: addsound('wrong'),
+    right: addsound('right')
   };
   for (i$ = 1; i$ <= 8; ++i$) {
     i = i$;
