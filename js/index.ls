@@ -19,6 +19,9 @@ angular.module \main, <[]>
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
     # preload image
+    for i from 1 to 8
+      img = new Image!
+      img.src = "img/chief/Q#i.png"
     for i from 1 to 4
       for j from 1 to 4
         img = new Image!

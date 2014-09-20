@@ -21,7 +21,7 @@ x$.controller('section', ['$scope', '$element', 'skolto'].concat(function($scope
   };
 }));
 x$.controller('main', ['$scope', 'randomFact'].concat(function($scope, randomFact){
-  var i$, i, lresult$, j$, j, img, results$ = [];
+  var i$, i, img, lresult$, j$, j, results$ = [];
   setTimeout(function(){
     return $('#footer').sticky({
       topSpacing: 0
@@ -31,6 +31,11 @@ x$.controller('main', ['$scope', 'randomFact'].concat(function($scope, randomFac
   $scope.ans = {
     Q1: {}
   };
+  for (i$ = 1; i$ <= 8; ++i$) {
+    i = i$;
+    img = new Image();
+    img.src = "img/chief/Q" + i + ".png";
+  }
   for (i$ = 1; i$ <= 4; ++i$) {
     i = i$;
     lresult$ = [];
