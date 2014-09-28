@@ -151,13 +151,13 @@ html, body {
 
 .section {
   display: none; }
-  .section p {
+  .section .para {
     width: 80%;
     margin: 20px auto 40px;
     text-indent: 1em;
     letter-spacing: 2px;
     line-height: 1.6em; }
-  .section p.detail {
+  .section .para.answer {
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
     padding: 30px 20px;

@@ -47,36 +47,44 @@
       </div>
       <div id="content">&nbsp;
         <div ng-controller="section" id="Q1" class="section">
-          <p class="detail">{{randomFact}}</p><br>
-          <p>{{randomFact}}</p>
           <div id="Q1-Q"></div>
-          <div class="question sm"><img src="img/question-sm.png">
-            <div class="desc">台灣里長性別比 (男：女) ？
+          <div class="question md"><img src="img/question-md.png">
+            <div class="desc">台灣這麼小，總鄰里數會是多少呢?
             </div>
           </div>
           <div class="choices">
-            <div ng-class="{'chosen': chosen==1,'fill': ans['Q2']}" ng-click="choice(1,'Q2',true)" class="choice c1 answer"><img src="img/choice/empty.png">
-              <div class="desc">6 : 1
+            <div ng-class="{'chosen': chosen==1,'fill': ans['Q2']}" ng-click="choice(1,'Q2',false)" class="choice c1"><img src="img/choice/empty.png">
+              <div class="desc">
+                <div>4000 至</div>
+                <div>5000 個</div>
               </div>
             </div>
             <div ng-class="{'chosen': chosen==2,'fill': ans['Q2']}" ng-click="choice(2,'Q2',false)" class="choice c2"><img src="img/choice/empty.png">
-              <div class="desc">4 : 1
+              <div class="desc">
+                <div>5000 至</div>
+                <div>6000 個</div>
               </div>
             </div>
             <div ng-class="{'chosen': chosen==3,'fill': ans['Q2']}" ng-click="choice(3,'Q2',false)" class="choice c3"><img src="img/choice/empty.png">
-              <div class="desc">2 : 1
+              <div class="desc">
+                <div>6000 至</div>
+                <div>7000 個</div>
               </div>
             </div>
-            <div ng-class="{'chosen': chosen==4,'fill': ans['Q2']}" ng-click="choice(4,'Q2',false)" class="choice c4"><img src="img/choice/empty.png">
-              <div class="desc">1 : 1
+            <div ng-class="{'chosen': chosen==4,'fill': ans['Q2']}" ng-click="choice(4,'Q2',true)" class="choice c4 answer"><img src="img/choice/empty.png">
+              <div class="desc">
+                <div>7000 至</div>
+                <div>8000 個</div>
               </div>
             </div>
           </div>
         </div>
         <div ng-controller="section" id="Q2" class="section">
-          <p class="detail">{{randomFact}}</p><br>
-          <p>{{randomFact}}</p>
           <div id="Q2-Q"></div>
+          <div class="para answer">
+            <p>正確答案：7839個鄰里數</p><br>
+            <p>根據內政部統計，民國90年之後，台灣的村里數目一直維持在7,700~7,900左右。民國99年底，台北縣、台中縣市、台南縣市、以及與高雄市合併的高雄縣，因改制成直轄市，原有的村改為里，里的數量大幅上升。其中新北市有1032的里，居全台縣市之冠，占了將近七分之一；最少的則是連江縣，僅有22個村。</p>
+          </div>
           <div class="question md"><img src="img/question-md.png">
             <div class="desc">大家口中的「里長伯」、「里長姨」的平均年齡究竟是?
             </div>
@@ -101,90 +109,121 @@
           </div>
         </div>
         <div ng-controller="section" id="Q3" class="section">
-          <p class="detail">{{randomFact}}</p><br>
-          <p>{{randomFact}}</p>
           <div id="Q3-Q"></div>
-          <div class="question md"><img src="img/question-md.png">
-            <div class="desc">里長該不會也被黨工滲透了？猜猜哪個黨的里長較多?
+          <div class="para answer">
+            <p>正確答案：55-64歲</p><br>
+            <p>雖然年滿23歲就可參選里長，但里長平均年齡落在中高齡的55-64歲，全台灣里長最年輕的縣市是連江縣東引鄉（平均年齡為42歲），最年長則是苗栗縣獅潭鄉（平均年齡為72歲），而光是民國45年出生、現年58歲的現任里長就有784個，佔了十分之一。</p>
+            <p>今年受到318反黑箱服貿運動影響，許多青年投入基層參政，以台北市來說，登記參選里長的35歲以下青年，就比上一屆多出7成，不過60歲以上的登記人數也增加許多，台北市里長參選人的平均年齡仍維持在55歲。</p>
+            <p>青年參政並非新鮮事，4年前的里長選舉，新竹市竹下里便選出年僅23歲的里長，台北市、桃園市也有25歲的參選人當選，但許多年輕里長大多倚靠家人、親戚擔任現任里長的既有網絡，繼承政治世家的案例居多。</p>
+          </div>
+          <div class="question sm"><img src="img/question-sm.png">
+            <div class="desc">台灣里長性別比 (男：女) ？
             </div>
           </div>
           <div class="choices">
-            <div ng-class="{'chosen': chosen==1,'fill': ans['Q4']}" ng-click="choice(1,'Q4',false)" class="choice c1"><img src="img/choice/empty.png">
-              <div class="desc">國民黨
+            <div ng-class="{'chosen': chosen==1,'fill': ans['Q4']}" ng-click="choice(1,'Q4',true)" class="choice c1 answer"><img src="img/choice/empty.png">
+              <div class="desc">6 : 1
               </div>
             </div>
             <div ng-class="{'chosen': chosen==2,'fill': ans['Q4']}" ng-click="choice(2,'Q4',false)" class="choice c2"><img src="img/choice/empty.png">
-              <div class="desc">民進黨
+              <div class="desc">4 : 1
               </div>
             </div>
             <div ng-class="{'chosen': chosen==3,'fill': ans['Q4']}" ng-click="choice(3,'Q4',false)" class="choice c3"><img src="img/choice/empty.png">
-              <div class="desc">親民黨
+              <div class="desc">2 : 1
               </div>
             </div>
-            <div ng-class="{'chosen': chosen==4,'fill': ans['Q4']}" ng-click="choice(4,'Q4',true)" class="choice c4 answer"><img src="img/choice/empty.png">
-              <div class="desc">沒有黨
+            <div ng-class="{'chosen': chosen==4,'fill': ans['Q4']}" ng-click="choice(4,'Q4',false)" class="choice c4"><img src="img/choice/empty.png">
+              <div class="desc">1 : 1
               </div>
             </div>
           </div>
         </div>
         <div ng-controller="section" id="Q4" class="section">
-          <p class="detail">{{randomFact}}</p><br>
-          <p>{{randomFact}}</p>
           <div id="Q4-Q"></div>
-          <div class="question lg"><img src="img/question-lg.png">
-            <div class="desc">身為一個里長，為民服務也是很正常的。里長該做的職責有哪些呢?
+          <div class="para answer">
+            <p>正確答案：6 : 1</p><br>
+            <p>爬梳中選會資料，女性擔任村里長的比例，在縣（市）只有10.21%、在直轄市為14％，全國平均僅12.03％。婦女新知基金會監事、台大政治系副教授黃長玲曾指出，觀察婦女參政趨勢，可發現民意代表中女性比例持續成長，但是女性首長比例多年來變化有限，越往基層女性比例越少。</p>
+            <p>同時，憲法第134條所規定的女性保障名額，並沒有包含村里長選舉。中央層級的立法委員選舉，便規定全國不分區立委中，女性立委不得少於政黨提名二分之一，而地方民意代表亦有名額達4人者，應有女性當選名額1人的相關規定。</p>
+          </div>
+          <div class="question md"><img src="img/question-md.png">
+            <div class="desc">里長該不會也被黨工滲透了？猜猜哪個黨的里長較多?
             </div>
           </div>
           <div class="choices">
             <div ng-class="{'chosen': chosen==1,'fill': ans['Q5']}" ng-click="choice(1,'Q5',false)" class="choice c1"><img src="img/choice/empty.png">
-              <div class="desc">廣播里政策
+              <div class="desc">國民黨
               </div>
             </div>
             <div ng-class="{'chosen': chosen==2,'fill': ans['Q5']}" ng-click="choice(2,'Q5',false)" class="choice c2"><img src="img/choice/empty.png">
-              <div class="desc">幫里民喬事情
+              <div class="desc">民進黨
               </div>
             </div>
             <div ng-class="{'chosen': chosen==3,'fill': ans['Q5']}" ng-click="choice(3,'Q5',false)" class="choice c3"><img src="img/choice/empty.png">
-              <div class="desc">主辦里團康活動
+              <div class="desc">親民黨
               </div>
             </div>
             <div ng-class="{'chosen': chosen==4,'fill': ans['Q5']}" ng-click="choice(4,'Q5',true)" class="choice c4 answer"><img src="img/choice/empty.png">
-              <div class="desc">跟里民有關的一手包辦
+              <div class="desc">沒有黨
               </div>
             </div>
           </div>
         </div>
         <div ng-controller="section" id="Q5" class="section">
-          <p class="detail">{{randomFact}}</p><br>
-          <p>{{randomFact}}</p>
           <div id="Q5-Q"></div>
+          <div class="para answer">
+            <p>正確答案：沒有黨</p><br>
+            <p>根據中選會統計資料，99年里長當選人最多為無黨籍及未經政黨推薦，共4927 人，其次為中國國民黨共3501 人，民主進步黨籍為583人，綠黨1 人、親民黨 1 人、中華統一促進黨 : 2 人、台灣團結聯盟 : 2 人，無黨籍及未經政黨推薦 : 6505 人</p>
+            <p>里長的政黨標籤並不一定重要，即使有黨籍也不一定會拿出來，多為自己經營的人際網絡。一般除了獲得政黨票（政黨提名），很多都是personal vote，倚靠人際網絡，走動地方。</p>
+            <p>資料來源：http://db.cec.gov.tw/histMain.jsp?voteSel=20100601E1</p>
+          </div>
           <div class="question lg"><img src="img/question-lg.png">
-            <div class="desc">市長只能連任一次，指派的區長則是可連任二次，那猜猜看里長可以連任幾次?
+            <div class="desc">身為一個里長，為民服務也是很正常的。里長該做的職責有哪些呢?
             </div>
           </div>
           <div class="choices">
             <div ng-class="{'chosen': chosen==1,'fill': ans['Q6']}" ng-click="choice(1,'Q6',false)" class="choice c1"><img src="img/choice/empty.png">
-              <div class="desc">1次
+              <div class="desc">廣播里政策
               </div>
             </div>
             <div ng-class="{'chosen': chosen==2,'fill': ans['Q6']}" ng-click="choice(2,'Q6',false)" class="choice c2"><img src="img/choice/empty.png">
-              <div class="desc">2次
+              <div class="desc">幫里民喬事情
               </div>
             </div>
             <div ng-class="{'chosen': chosen==3,'fill': ans['Q6']}" ng-click="choice(3,'Q6',false)" class="choice c3"><img src="img/choice/empty.png">
-              <div class="desc">3次
+              <div class="desc">主辦里團康活動
               </div>
             </div>
             <div ng-class="{'chosen': chosen==4,'fill': ans['Q6']}" ng-click="choice(4,'Q6',true)" class="choice c4 answer"><img src="img/choice/empty.png">
-              <div class="desc">無限次
+              <div class="desc">跟里民有關的一手包辦
               </div>
             </div>
           </div>
         </div>
         <div ng-controller="section" id="Q6" class="section">
-          <p class="detail">{{randomFact}}</p><br>
-          <p>{{randomFact}}</p>
           <div id="Q6-Q"></div>
+          <div class="para answer">
+            <p>正確答案：跟里民有關的一手包辦</p><br>
+            <p>里長並沒有明確法定職責，僅由各地市政府自行訂定服務實施要點，然而基本上大致相同（見附表），如協助公部門處理該里公共事務、向上級機關溝通以反應里民需求，為里民辦理各式活動。</p>
+            <p>過去台灣的里長多類似「土地公」的角色，高度參與里民生活，如同地方上的大家長，然而隨著台灣選舉經費上升，人際網絡關係式微，村里長往往成為地方樁腳、縣市議員的下線。</p>
+            <p>村/里長職責：
+              <ol>
+                <li>推行政令，反映民意。</li>
+                <li>推行村（里）文康活動。</li>
+                <li>協辦社會救助、兒童、少年、婦女、身心障礙者、老人保護、家庭暴力及性侵害防治、高風險家庭、弱勢家庭等查察通報事項、福利服務事項及其他改善生活環境與增進民眾福址有關事項。</li>
+                <li>代繕各種申請書表及辦理村（里）辦公處證明事項。</li>
+                <li>分送有關役政通知單、徵集令及辦理役男兵籍調查及兵役資料之查報。</li>
+                <li>辦理村（里）例行會議及加強鄰長會議之召開，並作成詳細紀錄，以備查考。</li>
+                <li>協辦各種公職人員選舉選務工作。</li>
+                <li>協辦房屋稅、地價稅發單催繳、綜合所得稅輔導申報等工作。</li>
+                <li>辦理村（里）工作會報之各項行政庶務。</li>
+                <li>其他交辦事項：係指臨時性統籌支援工作而言，公所各單位職掌範圍內工作，因重大或緊急或臨時亟需村（里）幹事協辦事項，應簽陳鄉（鎮、市）長核准後，再列入交辦事項。</li>
+                <li>村(里)幹事對政府列冊有案之中低收入者、低收入戶、獨居老人每半年至少應分別訪問一次，如有特殊事蹟或遭遇重大災害者，應作成訪問紀錄，並登載於工作綜合紀錄簿列管追蹤。</li>
+                <li>公所應至少每三個月舉行村(里)幹事工作會報一次，由鄉(鎮、市)長主持，鄉(鎮、市)長因故不能主持時，由主任秘書(秘書)或民政課長代理主持，得邀請公所各單位主管列席。」</li>
+              </ol>
+            </p>
+            <p>資料來源：臺大政治學系教授王業立、http://serene-scrubland-5950.herokuapp.com/views/info.html</p>
+          </div>
           <div class="question md"><img src="img/question-md.png">
             <div class="desc">里長不拿薪水，那麼一個月可以拿多少補助呢?
             </div>
@@ -209,44 +248,41 @@
           </div>
         </div>
         <div ng-controller="section" id="Q7" class="section">
-          <p class="detail">{{randomFact}}</p><br>
-          <p>{{randomFact}}</p>
           <div id="Q7-Q"></div>
-          <div class="question md"><img src="img/question-md.png">
-            <div class="desc">台灣這麼小，總鄰里數會是多少呢?
+          <div class="para answer">
+            <p>正確答案：四萬五</p><br>
+            <p>在我國，里長屬無給職，沒有薪水。不過，每個月有4萬5千元的事務補助費，主要補助如辦公處文具、郵電、水電費等因公支出之費用。里辦公處每年可申請里鄰建設服務經費30萬元、睦鄰互助聯誼活動補助費6萬元整。而里長個人每年則能申請健康檢查補助費1萬6千元、保險費1萬5千元、與自強活動補助費6千元。若里長在任期內死亡，則補助喪葬慰問金5萬元，若里長本人結婚，則補助2萬元。</p>
+          </div>
+          <div class="question lg"><img src="img/question-lg.png">
+            <div class="desc">市長只能連任一次，指派的區長則是可連任二次，那猜猜看里長可以連任幾次?
             </div>
           </div>
           <div class="choices">
             <div ng-class="{'chosen': chosen==1,'fill': ans['Q8']}" ng-click="choice(1,'Q8',false)" class="choice c1"><img src="img/choice/empty.png">
-              <div class="desc">
-                <div>4000 至</div>
-                <div>5000 個</div>
+              <div class="desc">1次
               </div>
             </div>
-            <div ng-class="{'chosen': chosen==2,'fill': ans['Q8']}" ng-click="choice(2,'Q8',true)" class="choice c2 answer"><img src="img/choice/empty.png">
-              <div class="desc">
-                <div>5000 至</div>
-                <div>6000 個</div>
+            <div ng-class="{'chosen': chosen==2,'fill': ans['Q8']}" ng-click="choice(2,'Q8',false)" class="choice c2"><img src="img/choice/empty.png">
+              <div class="desc">2次
               </div>
             </div>
             <div ng-class="{'chosen': chosen==3,'fill': ans['Q8']}" ng-click="choice(3,'Q8',false)" class="choice c3"><img src="img/choice/empty.png">
-              <div class="desc">
-                <div>6000 至</div>
-                <div>7000 個</div>
+              <div class="desc">3次
               </div>
             </div>
-            <div ng-class="{'chosen': chosen==4,'fill': ans['Q8']}" ng-click="choice(4,'Q8',false)" class="choice c4"><img src="img/choice/empty.png">
-              <div class="desc">
-                <div>7000 至</div>
-                <div>8000 個</div>
+            <div ng-class="{'chosen': chosen==4,'fill': ans['Q8']}" ng-click="choice(4,'Q8',true)" class="choice c4 answer"><img src="img/choice/empty.png">
+              <div class="desc">無限次
               </div>
             </div>
           </div>
         </div>
         <div ng-controller="section" id="Q8" class="section">
-          <p class="detail">{{randomFact}}</p><br>
-          <p>{{randomFact}}</p>
           <div id="Q8-Q"></div>
+          <div class="para answer">
+            <p>正確答案：無限次</p><br>
+            <p>在我國地方行政首長選舉中，除村（里）長連選得連任，無次數限制外，其餘直轄市長、縣（市）長、鄉（鎮、市）長均連選得連任1次。也因此許多民眾心中「里長始終是同1個」的印象，並不是憑空而來。</p>
+            <p>萬華區西門里現任里長葉木麟便是個明顯例子，他從民國44年首次擔任里長至今，連選得連任，已經做了60年的里長，也已經84歲。他這一屆雖然沒有繼續參選，但仍是臺北市最資深里長。而全台灣各地區，都不難見到已經連任8次、9次甚至10次以上的里長。</p>
+          </div>
         </div>
       </div>
     </div>
