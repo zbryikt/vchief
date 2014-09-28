@@ -1,0 +1,52 @@
+@import ../vars
+@import ../basic
+
+#bhs-container
+  position: absolute
+  top: 40%
+  left: 5%
+  width: 90%
+  height: 60%
+  overflow: hidden
+  @include transform(translate(-2%,-40%))
+  .frame
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: contain
+
+#bhs-house
+  background-image: url(../img/banner/house.png)
+  z-index: index($order, bhs-house)
+
+#bhs-bike
+  background-image: url(../img/banner/bike.png)
+  z-index: index($order, bhs-bike)
+
+@include keyframes(bhs-door-l)
+  0%
+    left: 0
+  100%
+    left: -8%
+
+@include keyframes(bhs-door-r)
+  0%
+    left: 0
+  100%
+    left: 8%
+
+#bhs-door-l
+  background-image: url(../img/banner/door-l.png)
+  @include animation(bhs-door-l ease-in-out 1 1.5s)
+#bhs-door-r
+  background-image: url(../img/banner/door-r.png)
+  @include animation(bhs-door-r ease-in-out 1 1.5s)
+
+#bhs-door-l, #bhs-door-r
+  z-index: index($order, bhs-door)
+  @include animation-delay(1.0s)
+  @include animation-fill-mode(forwards)

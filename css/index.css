@@ -3,7 +3,8 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-size: 20px; }
+  font-size: 20px;
+  color: #fff; }
 
 #content {
   width: 50%;
@@ -171,13 +172,14 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 1; }
   #puzzle img.bk {
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
-    z-index: 1; }
+    z-index: 2; }
 
 #puzzle .ib {
   width: 80%;
@@ -194,7 +196,7 @@ html, body {
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
-    z-index: 2; }
+    z-index: 3; }
   #puzzle .ib img.active {
     opacity: 1; }
 
@@ -205,7 +207,7 @@ html, body {
   left: 0;
   position: fixed;
   background-repeat: no-repeat;
-  z-index: 3; }
+  z-index: 4; }
   #menu .item {
     display: block;
     width: 44px;
@@ -236,3 +238,183 @@ html, body {
     background-position: 0 -308px; }
   #menu .item:nth-of-type(9) {
     background-position: 0 -352px; }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-moz-keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-ms-keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+#banner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+  background: #00a7b9; }
+
+#bnr-logo {
+  position: absolute;
+  width: 180px;
+  height: 56px;
+  background-image: url(../img/logo.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 20px; }
+
+#bnr-credit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.7em;
+  font-weight: 900;
+  margin: 20px 20px 0 0; }
+  #bnr-credit .item {
+    display: inline-block;
+    color: #fff;
+    background-image: url(../img/credit-icon.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    margin-right: 25px; }
+
+@media (max-width: 1280px) {
+  #bnr-credit {
+    width: 600px; }
+    #bnr-credit .item.long {
+      width: 310px; } }
+@media (max-width: 880px) {
+  #bnr-credit {
+    width: 320px; } }
+@media (max-width: 580px) {
+  #bnr-credit {
+    display: none; } }
+#bnr-intro {
+  position: absolute;
+  bottom: 70px;
+  font-size: 0.65em;
+  width: 60%;
+  left: 20%;
+  text-align: center; }
+
+@media (max-width: 1024px) {
+  #bnr-intro {
+    width: 80%;
+    left: 10%;
+    bottom: 40px; } }
+@media (max-width: 800px) {
+  #bnr-intro .line {
+    display: inline; } }
+@media (max-width: 480px) {
+  #bnr-intro {
+    bottom: 20px;
+    width: 90%;
+    left: 5%; } }
+#bhs-container {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  width: 90%;
+  height: 60%;
+  overflow: hidden;
+  -ms-transform: translate(-2%, -40%);
+  -moz-transform: translate(-2%, -40%);
+  -webkit-transform: translate(-2%, -40%);
+  -o-transform: translate(-2%, -40%);
+  transform: translate(-2%, -40%); }
+  #bhs-container .frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; }
+
+#bhs-house {
+  background-image: url(../img/banner/house.png);
+  z-index: 6; }
+
+#bhs-bike {
+  background-image: url(../img/banner/bike.png);
+  z-index: 8; }
+
+@-webkit-keyframes bhs-door-l {
+  0% {
+    left: 0; }
+  100% {
+    left: -8%; } }
+@-moz-keyframes bhs-door-l {
+  0% {
+    left: 0; }
+  100% {
+    left: -8%; } }
+@-ms-keyframes bhs-door-l {
+  0% {
+    left: 0; }
+  100% {
+    left: -8%; } }
+@keyframes bhs-door-l {
+  0% {
+    left: 0; }
+  100% {
+    left: -8%; } }
+@-webkit-keyframes bhs-door-r {
+  0% {
+    left: 0; }
+  100% {
+    left: 8%; } }
+@-moz-keyframes bhs-door-r {
+  0% {
+    left: 0; }
+  100% {
+    left: 8%; } }
+@-ms-keyframes bhs-door-r {
+  0% {
+    left: 0; }
+  100% {
+    left: 8%; } }
+@keyframes bhs-door-r {
+  0% {
+    left: 0; }
+  100% {
+    left: 8%; } }
+#bhs-door-l {
+  background-image: url(../img/banner/door-l.png);
+  -ms-animation: bhs-door-l ease-in-out 1 1.5s;
+  -moz-animation: bhs-door-l ease-in-out 1 1.5s;
+  -webkit-animation: bhs-door-l ease-in-out 1 1.5s;
+  -o-animation: bhs-door-l ease-in-out 1 1.5s;
+  animation: bhs-door-l ease-in-out 1 1.5s; }
+
+#bhs-door-r {
+  background-image: url(../img/banner/door-r.png);
+  -ms-animation: bhs-door-r ease-in-out 1 1.5s;
+  -moz-animation: bhs-door-r ease-in-out 1 1.5s;
+  -webkit-animation: bhs-door-r ease-in-out 1 1.5s;
+  -o-animation: bhs-door-r ease-in-out 1 1.5s;
+  animation: bhs-door-r ease-in-out 1 1.5s; }
+
+#bhs-door-l, #bhs-door-r {
+  z-index: 7;
+  -ms-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards; }

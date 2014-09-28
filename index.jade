@@ -9,6 +9,7 @@ include mixin.jade
 html(lang="en")
   head(prefix="og: http://ogp.me/ns#")
     meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     title template
     // libraries
     include library.jade
@@ -20,6 +21,23 @@ html(lang="en")
     script(type="text/javascript",src="#{assets}/misc/jquery.sticky.js")
   body(ng-app="main",ng-controller="main")
     #root
+      #banner
+        #bnr-logo
+        #bnr-credit
+          .item 專題企畫／蔣宜婷、邱彥瑜
+          .item.long 網頁工程／Kirby Wu（零傳媒）
+          .item 網頁設計／黃禹禛、吳政達
+          .item.long 編採團隊／蘇柔郡、彭筱婷、陳貞樺、陳韻年
+        #bhs-container
+          #bhs-house.frame
+          #bhs-bike.frame
+          #bhs-door-l.frame
+          #bhs-door-r.frame
+        #bnr-intro
+          .line 對多數人來講，我們心中的里長印象，大多限於社區廣播器的聲音，以及公告上的署名。
+          .line 里長，應該是連結我們與政府的重要媒介，但我們總是只聞其聲不見其人，甚至里長的職務內容都不清楚。
+          .line 你心中的里長輪廓是什麼樣子呢？新聞 e 論壇分析了台灣里長的相關資料，透過回答下面７大問題，一步一步描繪出台灣里長的大致樣貌。
+
       #menu
         a.item(ng-click="skolto('Q1-Q')",ng-class="{'active':ans['Q1']}")
         a.item(ng-click="skolto('Q1-Q')",ng-class="{'active':ans['Q1']}")
@@ -30,7 +48,7 @@ html(lang="en")
         a.item(ng-click="skolto('Q6-Q')",ng-class="{'active':ans['Q6']}")
         a.item(ng-click="skolto('Q7-Q')",ng-class="{'active':ans['Q7']}")
         a.item.active(href="https://www.facebook.com/NewseForum?fref=ts",target="_blank")
-
+    //-
       #puzzle
         img.bk(src="img/chief/BK.png")
         .ib
