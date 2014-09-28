@@ -13,6 +13,13 @@ html, body {
   background: #ffc800;
   padding: 100px 0; }
 
+@media (max-width: 800px) {
+  #content {
+    width: 100%;
+    margin-left: 0; } }
+a {
+  color: #f00; }
+
 .question {
   margin: 20px auto 60px;
   background: none;
@@ -30,6 +37,12 @@ html, body {
     top: 60px;
     left: 15%; }
 
+@media (max-width: 1280px) {
+  .question .desc {
+    font-size: 1.2em; } }
+@media (max-width: 1024px) {
+  .question .desc {
+    font-size: 1em; } }
 .question.sm .desc {
   top: 41%; }
 
@@ -38,6 +51,44 @@ html, body {
 
 .question.lg .desc {
   top: 22%; }
+
+.question-fluid {
+  position: relative;
+  width: 70%;
+  margin: 20px auto 60px;
+  background-image: url(../img/q-md.png);
+  background-position: center center;
+  background-repeat: repeat-y;
+  background-size: contain; }
+  .question-fluid:before, .question-fluid:after {
+    content: " ";
+    display: block;
+    width: 100%;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute; }
+  .question-fluid:before {
+    background-image: url(../img/q-up.png);
+    z-index: 10;
+    top: -80px;
+    height: 150px; }
+  .question-fluid:after {
+    background-image: url(../img/q-down.png);
+    z-index: 9;
+    bottom: -40px;
+    height: 88px; }
+  .question-fluid .desc, .question-fluid .nodesc {
+    font-size: 1.5em;
+    width: 80%; }
+  .question-fluid .desc {
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 15%; }
+  .question-fluid .nodesc {
+    margin-left: 15%;
+    visibility: hidden; }
 
 .choices {
   width: 388px;
@@ -154,7 +205,7 @@ html, body {
   .section .para {
     width: 80%;
     margin: 20px auto 40px;
-    text-indent: 1em;
+    text-indent: 2em;
     letter-spacing: 2px;
     line-height: 1.6em; }
   .section .para.answer {
@@ -162,6 +213,34 @@ html, body {
     border-bottom: 2px solid #000;
     padding: 30px 20px;
     margin-top: 40px; }
+    .section .para.answer p.answer {
+      text-indent: 0;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: 900; }
+  .section .para p.noindent {
+    text-indent: 0; }
+  .section .para p {
+    margin-bottom: 20px; }
+  .section .para p.datasrc {
+    font-size: 0.7em;
+    text-indent: 0; }
+    .section .para p.datasrc a {
+      text-decoration: underline;
+      color: #000; }
+  .section .para ul {
+    text-indent: 0;
+    line-height: 1.1em;
+    font-size: 0.8em;
+    max-height: 0;
+    overflow: hidden;
+    -ms-transition: max-height 1s;
+    -moz-transition: max-height 1s;
+    -webkit-transition: max-height 1s;
+    -o-transition: max-height 1s;
+    transition: max-height 1s; }
+    .section .para ul.active {
+      max-height: 1000px; }
 
 .section.active {
   display: block; }
@@ -201,6 +280,31 @@ html, body {
   #puzzle .ib img.active {
     opacity: 1; }
 
+.puzzle-inline {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: url(../img/chief/BK.png) center center no-repeat;
+  background-size: contain;
+  display: none; }
+  .puzzle-inline .ib {
+    position: relative;
+    margin: auto;
+    width: 60%; }
+  .puzzle-inline img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0; }
+  .puzzle-inline img:first-of-type {
+    position: static; }
+
+@media (max-width: 800px) {
+  #puzzle {
+    display: none; }
+
+  .puzzle-inline {
+    display: block; } }
 #menu {
   width: 44px;
   height: 397px;

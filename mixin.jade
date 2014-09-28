@@ -1,5 +1,6 @@
 mixin img(id)
   img(src="img/chief/"+id+".png",ng-class="{'active':ans['"+id+"']}")
+
 mixin section(id)
   .section(ng-controller="section",id=id)
     //-
@@ -19,7 +20,19 @@ mixin choice(id, next, ans)
   div(class="choice c"+id+ans,ng-class="{'chosen': chosen=="+id+",'fill': ans['"+next+"']}",ng-click="choice("+id+",'"+next+"',"+correct+")")
     img(src="img/choice/empty.png")
     .desc: block
+
 mixin question(size)
-  div(class="question "+size)
+  .question-fluid
+    .desc: block
+    .nodesc: block
+
+  //-div(class="question "+size)
     img(src="img/question-"+size+".png")
     .desc: block
+
+mixin puzzle-inline(count)
+  .puzzle-inline: .ib
+    - var idx = 1
+    while idx <= count
+      +img('Q'+idx)
+      - idx++

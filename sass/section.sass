@@ -6,7 +6,7 @@
   .para
     width: 80%
     margin: 20px auto 40px
-    text-indent: 1em
+    text-indent: 2em
     letter-spacing: 2px
     line-height: 1.6em
   .para.answer
@@ -14,6 +14,30 @@
     border-bottom: 2px solid #000
     padding: 30px 20px
     margin-top: 40px
+    p.answer
+      text-indent: 0
+      text-align: center
+      font-size: 1.2em
+      font-weight: 900
+  .para p.noindent
+    text-indent: 0
+  .para p
+    margin-bottom: 20px
+  .para p.datasrc
+    font-size: 0.7em
+    text-indent: 0
+    a
+      text-decoration: underline
+      color: #000
+  .para ul
+    text-indent: 0
+    line-height: 1.1em
+    font-size: 0.8em
+    max-height: 0
+    overflow: hidden
+    @include transition(max-height 1s)
+    &.active
+      max-height: 1000px
 
 .section.active
   display: block

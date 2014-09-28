@@ -31,3 +31,28 @@
     z-index: index($order, puzzleblock)
   img.active
     opacity: 1
+
+.puzzle-inline
+  width: 100%
+  padding-top: 20px
+  padding-bottom: 20px
+  background: url(../img/chief/BK.png) center center no-repeat
+  background-size: contain
+  display: none
+  .ib
+    position: relative
+    margin: auto
+    width: 60%
+  img
+    position: absolute
+    width: 100%
+    top: 0
+    left: 0
+  img:first-of-type
+    position: static
+
+@media (max-width: 800px)
+  #puzzle
+    display: none
+  .puzzle-inline
+    display: block

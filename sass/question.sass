@@ -1,3 +1,4 @@
+@import vars
 @import basic
 
 .question
@@ -16,6 +17,12 @@
     width: 80%
     top: 60px
     left: 15%
+@media (max-width: 1280px)
+  .question .desc
+    font-size: 1.2em
+@media (max-width: 1024px)
+  .question .desc
+    font-size: 1.0em
 
 .question.sm
   .desc
@@ -26,3 +33,41 @@
 .question.lg
   .desc
     top: 22%
+
+.question-fluid
+  position: relative
+  width: 70%
+  margin: 20px auto 60px
+  background-image: url(../img/q-md.png)
+  background-position: center center
+  background-repeat: repeat-y
+  background-size: contain
+  &:before, &:after
+    content: " "
+    display: block
+    width: 100%
+    background-size: contain
+    background-position: center center
+    background-repeat: no-repeat
+    position: absolute
+  &:before
+    background-image: url(../img/q-up.png)
+    z-index: index($order, qtd-up)
+    top: -80px
+    height: 150px
+  &:after
+    background-image: url(../img/q-down.png)
+    z-index: index($order, qtd-down)
+    bottom: -40px
+    height: 88px
+  .desc, .nodesc
+    font-size: 1.5em
+    width: 80%
+  .desc
+    position: absolute
+    z-index: index($order, qtd-desc)
+    top: 0
+    left: 15%
+  .nodesc
+    margin-left: 15%
+    visibility: hidden
