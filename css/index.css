@@ -200,6 +200,13 @@ a {
 .choice.c4.fill.answer {
   background-image: url(../img/choice/34.png); }
 
+@media (max-width: 480px) {
+  .choices {
+    text-align: center; }
+
+  .choice {
+    width: 71px;
+    line-height: 0.8em; } }
 .section {
   display: none; }
   .section .para {

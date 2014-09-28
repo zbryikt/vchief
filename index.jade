@@ -158,7 +158,9 @@ html(lang="en")
               li 村(里)幹事對政府列冊有案之中低收入者、低收入戶、獨居老人每半年至少應分別訪問一次，如有特殊事蹟或遭遇重大災害者，應作成訪問紀錄，並登載於工作綜合紀錄簿列管追蹤。
               li 公所應至少每三個月舉行村(里)幹事工作會報一次，由鄉(鎮、市)長主持，鄉(鎮、市)長因故不能主持時，由主任秘書(秘書)或民政課長代理主持，得邀請公所各單位主管列席。」
 
-            .btn.btn-block(ng-click="dutyMore=!!!dutyMore") 看更多
+            .btn.btn-success.btn-block(ng-disabled="dutyMore==true",ng-click="dutyMore=!!!dutyMore") 看更多
+            br
+            br
             p.datasrc 
               | 資料來源：臺大政治學系教授王業立、
               a(href="http://serene-scrubland-5950.herokuapp.com/views/info.html") http://serene-scrubland-5950.herokuapp.com/views/info.html
