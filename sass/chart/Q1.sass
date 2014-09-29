@@ -1,0 +1,54 @@
+@import ../vars
+@import ../basic
+
+#Q1-chart
+  height: 32px
+  color: #fff
+
+#Q1-male, #Q1-female
+  position: absolute
+  height: 100%
+  top: 0
+
+#Q1-male
+  width: 85%
+  left: 0
+  background: $c_darkblue
+  text-align: left
+  padding-left: 10px
+
+#Q1-female
+  width: 15%
+  left: 85%
+  background: $c_darkorange
+  text-align: right
+  padding-right: 10px
+
+#Q1-all, #Q1-you
+  position: absolute
+  top: -5px
+  height: 40px
+  width: 3px
+  background: #444
+  font-size: 0.5em
+  color: #000
+  &:before, &:after
+    position: absolute
+    display: block
+    margin-left: -50px
+    width: 100px
+    text-align: center
+  &:before
+    top: -25px
+  &:after
+    bottom: -25px
+
+#Q1-all
+  left: 20%
+#Q1-all:after
+  content: "大家的答案"
+
+#Q1-you
+  left: 50%
+#Q1-you:before
+  content: "你的答案"

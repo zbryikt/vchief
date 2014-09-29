@@ -1,6 +1,14 @@
 angular.module \main, <[]>
 
   ..controller \section, <[$scope $element skolto]> ++ ($scope, $element, skolto) ->
+    # debug
+    $scope.q2Age = [1 2 4 8 16 32 48 56 49 47 31 15 7 3]
+    $scope.q3Count = [11432 3501 583 5 1]
+    $scope.q4Count = [23 55 5 10]
+    $scope.q5Count = [23 55 5 10]
+    $scope.q6Count = [25175 45000 45965 55000 62475]
+    $scope.finalCount = [1 3 45 120 99 65 23 4]
+
     $scope.cid = id = $element.attr \id
     $scope.chosen = 0
     $scope.$watch '$parent.ans', (-> 
@@ -23,6 +31,7 @@ angular.module \main, <[]>
     setTimeout (-> $(\#footer)sticky topSpacing: 0), 0
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
+    $scope.ans = {Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}, Q6:{}, Q7:{}, Q8:{}}
     $scope.skolto = (nid) -> skolto nid, 0
     addsound = (name) ->
       node = document.createElement \audio
@@ -40,3 +49,4 @@ angular.module \main, <[]>
       for j from 1 to 4
         img = new Image!
         img.src = "img/choice/#i#j.png"
+

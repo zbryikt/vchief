@@ -3,6 +3,12 @@ var x$;
 x$ = angular.module('main', []);
 x$.controller('section', ['$scope', '$element', 'skolto'].concat(function($scope, $element, skolto){
   var id;
+  $scope.q2Age = [1, 2, 4, 8, 16, 32, 48, 56, 49, 47, 31, 15, 7, 3];
+  $scope.q3Count = [11432, 3501, 583, 5, 1];
+  $scope.q4Count = [23, 55, 5, 10];
+  $scope.q5Count = [23, 55, 5, 10];
+  $scope.q6Count = [25175, 45000, 45965, 55000, 62475];
+  $scope.finalCount = [1, 3, 45, 120, 99, 65, 23, 4];
   $scope.cid = id = $element.attr('id');
   $scope.chosen = 0;
   $scope.$watch('$parent.ans', function(){
@@ -40,6 +46,16 @@ x$.controller('main', ['$scope', 'randomFact', 'skolto'].concat(function($scope,
   $scope.randomFact = randomFact();
   $scope.ans = {
     Q1: {}
+  };
+  $scope.ans = {
+    Q1: {},
+    Q2: {},
+    Q3: {},
+    Q4: {},
+    Q5: {},
+    Q6: {},
+    Q7: {},
+    Q8: {}
   };
   $scope.skolto = function(nid){
     return skolto(nid, 0);

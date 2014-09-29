@@ -81,6 +81,12 @@
           </div>
           <div class="para answer">
             <p class="answer">正確答案：6 : 1</p><br>
+            <div id="Q1-chart" class="q-chart">
+              <div id="Q1-male">男性</div>
+              <div id="Q1-female">女性</div>
+              <div id="Q1-all"></div>
+              <div id="Q1-you"></div>
+            </div><br><br>
             <p>爬梳中選會資料，女性擔任村里長的比例，在縣（市）只有10.21%、在直轄市為14％，全國平均僅12.03％。婦女新知基金會監事、台大政治系副教授黃長玲曾指出，觀察婦女參政趨勢，可發現民意代表中女性比例持續成長，但是女性首長比例多年來變化有限，越往基層女性比例越少。</p>
             <p>同時，憲法第134條所規定的女性保障名額，並沒有包含村里長選舉。中央層級的立法委員選舉，便規定全國不分區立委中，女性立委不得少於政黨提名二分之一，而地方民意代表亦有名額達4人者，應有女性當選名額1人的相關規定。</p>
           </div>
@@ -117,6 +123,19 @@
           </div>
           <div class="para answer">
             <p class="answer">正確答案：55-64歲</p><br>
+            <div id="Q2-chart" class="barchart">
+              <div class="bars">
+                <div ng-repeat="a in q2Age" ng-attr-style="height:{{a/0.7}}%;left:{{7*$index}}%" class="bar"></div>
+              </div>
+              <div class="q-btmline"></div>
+              <div class="labels">
+                <div class="label">25 歲</div>
+                <div class="label">55 歲</div>
+                <div class="label">85 歲</div>
+              </div>
+              <div class="you-value"></div>
+              <div class="all-value"></div>
+            </div><br><br>
             <p>雖然年滿23歲就可參選里長，但里長平均年齡落在中高齡的55-64歲，全台灣里長最年輕的縣市是連江縣東引鄉（平均年齡為42歲），最年長則是苗栗縣獅潭鄉（平均年齡為72歲），而光是民國45年出生、現年58歲的現任里長就有784個，佔了十分之一。</p>
             <p>今年受到318反黑箱服貿運動影響，許多青年投入基層參政，以台北市來說，登記參選里長的35歲以下青年，就比上一屆多出7成，不過60歲以上的登記人數也增加許多，台北市里長參選人的平均年齡仍維持在55歲。</p>
             <p>青年參政並非新鮮事，4年前的里長選舉，新竹市竹下里便選出年僅23歲的里長，台北市、桃園市也有25歲的參選人當選，但許多年輕里長大多倚靠家人、親戚擔任現任里長的既有網絡，繼承政治世家的案例居多。</p>
@@ -154,6 +173,21 @@
           </div>
           <div class="para answer">
             <p class="answer">正確答案：沒有黨</p><br>
+            <div id="Q3-chart" class="barchart">
+              <div class="bars">
+                <div ng-repeat="c in q3Count" ng-attr-style="height:{{c/80}}%;left:{{20*$index}}%" class="bar"></div>
+              </div>
+              <div class="q-btmline"></div>
+              <div class="labels">
+                <div class="label">無黨籍</div>
+                <div class="label">國民黨</div>
+                <div class="label">民進黨</div>
+                <div class="label">其他</div>
+                <div class="label">親民黨</div>
+              </div>
+              <div class="you-choice">你的選擇</div>
+              <div class="all-choice">主流選擇</div>
+            </div><br><br>
             <p>根據中選會統計資料，99年里長當選人最多為無黨籍及未經政黨推薦，共4927 人，其次為中國國民黨共3501 人，民主進步黨籍為583人，綠黨1 人、親民黨 1 人、中華統一促進黨 : 2 人、台灣團結聯盟 : 2 人，無黨籍及未經政黨推薦 : 6505 人</p>
             <p>里長的政黨標籤並不一定重要，即使有黨籍也不一定會拿出來，多為自己經營的人際網絡。一般除了獲得政黨票（政黨提名），很多都是personal vote，倚靠人際網絡，走動地方。</p>
             <p class="datasrc">資料來源：<a href="http://db.cec.gov.tw/histMain.jsp?voteSel=20100601E1">http://db.cec.gov.tw/histMain.jsp?voteSel=20100601E1</a></p>
@@ -191,6 +225,19 @@
           </div>
           <div class="para answer">
             <p class="answer">正確答案：跟里民有關的一手包辦</p><br>
+            <div id="Q4-chart" class="barchart">
+              <div class="bars">
+                <div ng-repeat="c in q4Count" ng-attr-style="height:{{c/0.55}}%;left:{{25*$index}}%" class="bar"></div>
+              </div>
+              <div class="q-btmline"></div>
+              <div class="labels">
+                <div class="label">A</div>
+                <div class="label">B</div>
+                <div class="label">C</div>
+                <div class="label">D</div>
+              </div>
+              <div class="you-choice">你的選擇</div>
+            </div><br><br>
             <p>里長並沒有明確法定職責，僅由各地市政府自行訂定服務實施要點，然而基本上大致相同（見附表），如協助公部門處理該里公共事務、向上級機關溝通以反應里民需求，為里民辦理各式活動。</p>
             <p>過去台灣的里長多類似「土地公」的角色，高度參與里民生活，如同地方上的大家長，然而隨著台灣選舉經費上升，人際網絡關係式微，村里長往往成為地方樁腳、縣市議員的下線。</p>
             <p class="noindent">村/里長職責：</p>
@@ -247,6 +294,19 @@
           </div>
           <div class="para answer">
             <p class="answer">正確答案：無限次</p><br>
+            <div id="Q5-chart" class="barchart">
+              <div class="bars">
+                <div ng-repeat="c in q5Count" ng-attr-style="height:{{c/0.55}}%;left:{{25*$index}}%" class="bar"></div>
+              </div>
+              <div class="q-btmline"></div>
+              <div class="labels">
+                <div class="label">A</div>
+                <div class="label">B</div>
+                <div class="label">C</div>
+                <div class="label">D</div>
+              </div>
+              <div class="you-choice">你的選擇</div>
+            </div><br><br>
             <p>在我國地方行政首長選舉中，除村（里）長連選得連任，無次數限制外，其餘直轄市長、縣（市）長、鄉（鎮、市）長均連選得連任1次。也因此許多民眾心中「里長始終是同1個」的印象，並不是憑空而來。</p>
             <p>萬華區西門里現任里長葉木麟便是個明顯例子，他從民國44年首次擔任里長至今，連選得連任，已經做了60年的里長，也已經84歲。他這一屆雖然沒有繼續參選，但仍是臺北市最資深里長。而全台灣各地區，都不難見到已經連任8次、9次甚至10次以上的里長。</p>
           </div>
@@ -283,6 +343,19 @@
           </div>
           <div class="para answer">
             <p class="answer">正確答案：四萬五</p><br>
+            <div id="Q6-chart" class="barchart">
+              <div class="bars">
+                <div ng-repeat="c in q6Count" ng-attr-style="height:{{c/850}}%;left:{{20*$index}}%" class="bar"></div>
+              </div>
+              <div class="q-btmline"></div>
+              <div class="labels">
+                <div class="label">新鮮人</div>
+                <div class="label">里長</div>
+                <div class="label">全國平均</div>
+                <div class="label">你的選擇</div>
+                <div class="label">平均答案</div>
+              </div>
+            </div><br><br>
             <p>在我國，里長屬無給職，沒有薪水。不過，每個月有4萬5千元的事務補助費，主要補助如辦公處文具、郵電、水電費等因公支出之費用。里辦公處每年可申請里鄰建設服務經費30萬元、睦鄰互助聯誼活動補助費6萬元整。而里長個人每年則能申請健康檢查補助費1萬6千元、保險費1萬5千元、與自強活動補助費6千元。若里長在任期內死亡，則補助喪葬慰問金5萬元，若里長本人結婚，則補助2萬元。</p>
           </div>
           <div class="question-fluid">
@@ -327,6 +400,21 @@
           <div class="para answer">
             <p class="answer">正確答案：7839個鄰里數</p><br>
             <p>根據內政部統計，民國90年之後，台灣的村里數目一直維持在7,700~7,900左右。民國99年底，台北縣、台中縣市、台南縣市、以及與高雄市合併的高雄縣，因改制成直轄市，原有的村改為里，里的數量大幅上升。其中新北市有1032的里，居全台縣市之冠，占了將近七分之一；最少的則是連江縣，僅有22個村。</p>
+          </div>
+          <div class="para">
+            <h3>你答對幾題？來看網友答對題數分佈！</h3><br><br>
+            <div id="final-chart" class="barchart">
+              <div class="bars">
+                <div ng-repeat="a in finalCount" ng-attr-style="height:{{a/1.2}}%;left:{{12*$index}}%" class="bar"></div>
+              </div>
+              <div class="q-btmline"></div>
+              <div class="labels">
+                <div class="label">1 題</div>
+                <div class="label">5 題</div>
+                <div class="label">10 題</div>
+              </div>
+              <div class="you-value"></div>
+            </div>
           </div>
         </div>
       </div>

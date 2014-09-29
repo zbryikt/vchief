@@ -1,0 +1,43 @@
+@import ../vars
+@import ../basic
+
+.barchart
+  height: 100px
+  text-indent: 0
+  position: relative
+  width: 100%
+
+.barchart .bar
+  position: absolute
+  bottom: 0
+  background: $c_darkorange
+
+.barchart .label
+  position: absolute
+  font-size: 0.5em
+  text-align: center
+  bottom: -23px
+  color: #000
+
+.barchart
+  .all-choice, .you-choice
+    position: absolute
+    bottom: -45px
+    display: block
+    text-align: center
+    font-size: 0.5em
+  .all-value, .you-value
+    position: absolute
+    top: 0
+    width: 3px
+    height: 100%
+    background: #000
+    &:before
+      position: absolute
+      top: -26px
+      display: block
+      width: 100px
+      margin-left: -50px
+      text-align: center
+      font-size: 0.5em
+
