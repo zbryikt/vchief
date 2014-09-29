@@ -12,6 +12,7 @@
   position: fixed
   background-repeat: no-repeat
   z-index: index($order, menu)
+
   .item
     display: block
     width: 44px
@@ -33,3 +34,12 @@
   @include itembk(7)
   @include itembk(8)
   @include itembk(9)
+  @include itembk(10)
+
+@media (max-width: 480px)
+  #menu
+    height: 88px
+    overflow: hidden
+    @include transition(height 1s)
+    &.active
+      height: 440px

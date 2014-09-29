@@ -17,6 +17,9 @@ html, body {
   #content {
     width: 100%;
     margin-left: 0; } }
+@media (max-width: 480px) {
+  #content {
+    padding-bottom: 0; } }
 a {
   color: #f00; }
 
@@ -90,10 +93,16 @@ a {
     margin-left: 15%;
     visibility: hidden; }
 
+@media (max-width: 480px) {
+  .question-fluid .desc, .question-fluid .nodesc {
+    font-size: 1.1em; } }
 .choices {
   width: 388px;
   margin: 20px auto 60px; }
 
+@media (max-width: 480px) {
+  .choices {
+    width: auto; } }
 .choice {
   width: 91px;
   background-position: top left;
@@ -252,6 +261,10 @@ a {
 .section.active {
   display: block; }
 
+@media (max-width: 480px) {
+  .section .para {
+    width: 90%;
+    font-size: 0.8em; } }
 #puzzle {
   width: 50%;
   height: 100%;
@@ -312,6 +325,12 @@ a {
 
   .puzzle-inline {
     display: block; } }
+@media (max-width: 480px) {
+  .puzzle-inline {
+    background-size: cover; }
+
+  .puzzle-inline .ib {
+    width: 100%; } }
 #menu {
   width: 44px;
   height: 397px;
@@ -350,7 +369,20 @@ a {
     background-position: 0 -308px; }
   #menu .item:nth-of-type(9) {
     background-position: 0 -352px; }
+  #menu .item:nth-of-type(10) {
+    background-position: 0 -396px; }
 
+@media (max-width: 480px) {
+  #menu {
+    height: 88px;
+    overflow: hidden;
+    -ms-transition: height 1s;
+    -moz-transition: height 1s;
+    -webkit-transition: height 1s;
+    -o-transition: height 1s;
+    transition: height 1s; }
+    #menu.active {
+      height: 440px; } }
 @-webkit-keyframes blink {
   0% {
     opacity: 1; }
