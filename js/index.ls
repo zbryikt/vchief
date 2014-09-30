@@ -1,23 +1,6 @@
-angular.module \main, <[]>
+angular.module \main, <[firebase]>
 
-  ..controller \section, <[$scope $element skolto]> ++ ($scope, $element, skolto) ->
-    # debug
-    $scope.q1 = do
-      you: 75
-      all: 45
-    $scope.q2 = do
-      data: [9 27 82 199 357 690 1158 1507 1497 1012 593 424 204 47 18]
-      you: 75 
-      all: 45
-    $scope.q3 = do
-      data: [11432 3501 583 5 1]
-      you: 2
-      all: 3
-    $scope.q4Count = [23 55 5 10]
-    $scope.q5Count = [23 55 5 10]
-    $scope.q6Count = [25175 45000 45965 55000 62475]
-    $scope.finalCount = [1 3 45 120 99 65 23 4]
-
+  ..controller \section, <[$scope $element $firebase skolto]> ++ ($scope, $element, $firebase, skolto) ->
     $scope.cid = id = $element.attr \id
     $scope.chosen = 0
     $scope.$watch '$parent.ans', (-> 
@@ -30,18 +13,58 @@ angular.module \main, <[]>
       $scope.$parent.ans[nid] = {}
       skolto nid
       name = if ans => \right else \wrong
-      console.log $scope.$parent.sound[name].play
       setTimeout ->
         $scope.$parent.sound[name]
           ..load!
           ..play!
       , 100
-  ..controller \main, <[$scope randomFact skolto]> ++ ($scope, randomFact, skolto) ->
+  ..controller \main, <[$scope $firebase randomFact skolto]> ++ ($scope, $firebase, randomFact, skolto) ->
     setTimeout (-> $(\#footer)sticky topSpacing: 0), 0
+    $scope.db = db = $firebase(new Firebase "https://vchief.firebaseio.com/answer")$asArray!
+
+    $scope.Q1 = do
+      you: 75
+      all: 45
+      map: -> [0 86 80 67 50][it]
+    $scope.Q2 = do
+      data: [9 27 82 199 357 690 1158 1507 1497 1012 593 424 204 47 18]
+      you: 75 
+      all: 45
+      map: -> (100 / 15) * ( (30 + it * 10) - 27 ) / 4
+    $scope.Q3 = do
+      data: [11432 3501 583 5 1]
+      you: 2
+      all: 1
+      map: -> [0 1 2 4 0][it] * 20
+    $scope.Q5 = do
+      data: [7825 2810 967 2268]
+      you: 1
+    $scope.Q6 = do
+      data: [[25175] [45000] [45965] [83333] [0] [0]]
+      you: 55000
+      map: (choice,role) -> 
+        @data[if role=='you' => 4 else 5][0] = [0 25000 45000 65000 85000][choice]
+    $scope.final = do
+      data: [1 6 45 120 99 65 23 4]
+      you: 0
+      all: 0
+
+    $scope.q4Count = [23 55 5 10]
+    $scope.q5Count = [23 55 5 10]
+
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
     $scope.ans = {Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}, Q6:{}, Q7:{}, Q8:{}}
+    $scope.trueAns = Q1: 1, Q2: 3, Q3: 4, Q4: 4, Q5: 5, Q6: 2, Q7: 4
     $scope.skolto = (nid) -> skolto nid, 0
+    $scope.$watch 'ans', -> 
+      $scope.final.you = 0
+      for i from 1 to 7 =>
+        n = "Q#i"
+        if !isNaN($scope.ans[n]) and $scope[n] and $scope[n]map => 
+          $scope[n]you = $scope[n]map $scope.ans[n], 'you'
+        if $scope.ans[n] == $scope.trueAns[n] => $scope.final.you++
+    , true
     addsound = (name) ->
       node = document.createElement \audio
       node.appendChild(document.createElement(\source) <<< src: "sound/#name.ogg", type: "audio/ogg")

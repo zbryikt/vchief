@@ -18,6 +18,8 @@ html(lang="en")
     script(type="text/javascript",src="sentence-stat.js")
     script(type="text/javascript",src="js/index.js")
     script(type="text/javascript",src="js/library.js")
+    script(type="text/javascript",src="//cdn.firebase.com/js/client/1.0.21/firebase.js")
+    script(type="text/javascript",src="//cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js")
     script(type="text/javascript",src="#{assets}/misc/jquery.sticky.js")
   body(ng-app="main",ng-controller="main")
     #root
@@ -80,8 +82,8 @@ html(lang="en")
             #Q1-chart.q-chart
               #Q1-male 男性
               #Q1-female 女性
-              #Q1-all(ng-attr-style="left:{{q1.you}}%")
-              #Q1-you(ng-attr-style="left:{{q1.all}}%")
+              #Q1-all(ng-attr-style="left:{{Q1.all}}%")
+              #Q1-you(ng-attr-style="left:{{Q1.you}}%")
             br
             br
             p 爬梳中選會資料，女性擔任村里長的比例，在縣（市）只有10.21%、在直轄市為14％，全國平均僅12.03％。婦女新知基金會監事、台大政治系副教授黃長玲曾指出，觀察婦女參政趨勢，可發現民意代表中女性比例持續成長，但是女性首長比例多年來變化有限，越往基層女性比例越少。
@@ -114,14 +116,14 @@ html(lang="en")
 
             #Q2-chart.barchart
               .bars
-                .bar(ng-repeat="a in q2.data",ng-attr-style="height:{{a/15.08}}%;left:{{6.6*$index}}%") 
+                .bar(ng-repeat="a in Q2.data",ng-attr-style="height:{{a/15.08}}%;left:{{6.6*$index}}%") 
               .q-btmline
               .labels
                 .label 27 歲
                 .label 60 歲
                 .label 87 歲
-              .you-value(ng-attr-style="left: {{q2.you}}%")
-              .all-value(ng-attr-style="left: {{q2.all}}%")
+              .you-value(ng-attr-style="left: {{Q2.you}}%")
+              .all-value(ng-attr-style="left: {{Q2.all}}%")
 
             br
             br
@@ -144,7 +146,7 @@ html(lang="en")
 
             #Q3-chart.barchart
               .bars
-                .bar(ng-repeat="c in q3.data",ng-attr-style="height:{{c/80}}%;left:{{20*$index}}%")
+                .bar(ng-repeat="c in Q3.data",ng-attr-style="height:{{c/80}}%;left:{{20*$index}}%")
               .q-btmline
               .labels
                 .label 無黨籍
@@ -152,8 +154,8 @@ html(lang="en")
                 .label 民進黨
                 .label 其他
                 .label 親民黨
-              .you-choice(ng-attr-style="left:{{20*q3.you}}%") 你的選擇
-              .all-choice(ng-attr-style="left:{{20*q3.all}}%") 主流選擇
+              .you-choice(ng-attr-style="left:{{Q3.you}}%") 你的選擇
+              .all-choice(ng-attr-style="left:{{Q3.all}}%") 主流選擇
 
             br
             br
@@ -186,6 +188,7 @@ html(lang="en")
                 .label C
                 .label D
               .you-choice 你的選擇
+              .all-choice 其他人的選擇分佈
 
             br
             br
@@ -232,15 +235,18 @@ html(lang="en")
 
             #Q5-chart.barchart
               .bars
-                .bar(ng-repeat="c in q5Count",ng-attr-style="height:{{c/0.55}}%;left:{{25*$index}}%")
+                .bar(ng-repeat="c in Q5.data",ng-attr-style="height:{{c/78.25}}%;left:{{25*$index}}%")
               .q-btmline
+              .title 2010 年村里長選舉連任狀況
               .labels
-                .label A
-                .label B
-                .label C
-                .label D
-              .you-choice 你的選擇
-
+                .label 村里總數
+                .label 連任成功
+                .label 連任失敗
+                .label 同額競選
+              //-.you-choice 你的選擇
+            br
+            br
+            small: small (註：村里僅一人參選即稱同額競選)
             br
             br
             p 在我國地方行政首長選舉中，除村（里）長連選得連任，無次數限制外，其餘直轄市長、縣（市）長、鄉（鎮、市）長均連選得連任1次。也因此許多民眾心中「里長始終是同1個」的印象，並不是憑空而來。
@@ -261,12 +267,14 @@ html(lang="en")
 
             #Q6-chart.barchart
               .bars
-                .bar(ng-repeat="c in q6Count",ng-attr-style="height:{{c/850}}%;left:{{20*$index}}%")
+                .bar(ng-repeat="c in Q6.data",ng-attr-style="height:{{c[0]/850}}%;left:{{100*$index/6}}%")
               .q-btmline
+              .title 國人平均月薪
               .labels
                 .label 新鮮人
                 .label 里長
                 .label 全國平均
+                .label 百萬年薪
                 .label 你的選擇
                 .label 平均答案
 
@@ -292,7 +300,7 @@ html(lang="en")
         +section('Q8')
           +puzzle-inline(8)
           .para.answer
-            p.answer 正確答案：7839個鄰里數
+            p.answer 正確答案：7839個
             br
             p 根據內政部統計，民國90年之後，台灣的村里數目一直維持在7,700~7,900左右。民國99年底，台北縣、台中縣市、台南縣市、以及與高雄市合併的高雄縣，因改制成直轄市，原有的村改為里，里的數量大幅上升。其中新北市有1032的里，居全台縣市之冠，占了將近七分之一；最少的則是連江縣，僅有22個村。
           .para
@@ -302,10 +310,11 @@ html(lang="en")
 
             #final-chart.barchart
               .bars
-                .bar(ng-repeat="a in finalCount",ng-attr-style="height:{{a/1.2}}%;left:{{12*$index}}%") 
+                .bar(ng-repeat="a in final.data",ng-attr-style="height:{{a/1.2}}%;left:{{12.5*$index}}%") 
               .q-btmline
               .labels
-                .label 1 題
-                .label 5 題
-                .label 10 題
-              .you-value
+                .label 0 題
+                .label 3 題
+                .label 7 題
+              .you-value(ng-attr-style="left:{{12.5 * final.you + 6.25}}%")
+              .all-value(ng-attr-style="left:{{12.5 * final.all + 6.25}}%")

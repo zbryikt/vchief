@@ -23,15 +23,18 @@
   background: $c_darkorange
   text-align: right
   padding-right: 10px
+  white-space: nowrap
 
 #Q1-all, #Q1-you
   position: absolute
   top: -5px
+  left: 0%
   height: 40px
   width: 3px
   background: #444
   font-size: 0.5em
   color: #000
+  @include transition(all 5s)
   &:before, &:after
     position: absolute
     display: block
