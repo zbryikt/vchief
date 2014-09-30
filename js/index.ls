@@ -61,7 +61,7 @@ angular.module \main, <[firebase]>
 
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
-    #$scope.ans = {Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}, Q6:{}, Q7:{}, Q8:{}}
+    $scope.ans = {Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}, Q6:{}, Q7:{}, Q8:{}}
     #$scope.ans = Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}
     $scope.trueAns = Q1: 1, Q2: 3, Q3: 4, Q4: 4, Q5: 4, Q6: 2, Q7: 4
     $scope.skolto = (nid) -> skolto nid, 0
@@ -86,7 +86,7 @@ angular.module \main, <[firebase]>
             $scope.Q3.all = $scope.Q3.map item.Q3
         if !isNaN(item.Q4) => $scope.Q4.max >?= (++$scope.Q4.data[item.Q4 - 1][0])
         $scope.final.data[count][0]++
-        if $scope.final.data[count][0] > $scope.final.max => $scope.final.max = $scope.final.data[count][0] / 100
+        if $scope.final.data[count][0] > $scope.final.max => $scope.final.max = $scope.final.data[count][0]
     $scope.$watch 'ans', -> 
       $scope.final.you = 0
       for i from 1 to 7 =>

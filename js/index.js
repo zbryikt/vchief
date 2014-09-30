@@ -97,6 +97,16 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
   $scope.ans = {
     Q1: {}
   };
+  $scope.ans = {
+    Q1: {},
+    Q2: {},
+    Q3: {},
+    Q4: {},
+    Q5: {},
+    Q6: {},
+    Q7: {},
+    Q8: {}
+  };
   $scope.trueAns = {
     Q1: 1,
     Q2: 3,
@@ -146,7 +156,7 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
       }
       $scope.final.data[count][0]++;
       if ($scope.final.data[count][0] > $scope.final.max) {
-        return $scope.final.max = $scope.final.data[count][0] / 100;
+        return $scope.final.max = $scope.final.data[count][0];
       }
     }
   });

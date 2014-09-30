@@ -305,13 +305,13 @@ html(lang="en")
             br
             p 根據內政部統計，民國90年之後，台灣的村里數目一直維持在7,700~7,900左右。民國99年底，台北縣、台中縣市、台南縣市、以及與高雄市合併的高雄縣，因改制成直轄市，原有的村改為里，里的數量大幅上升。其中新北市有1032的里，居全台縣市之冠，占了將近七分之一；最少的則是連江縣，僅有22個村。
           .para
-            h3 你答對幾題？來看網友答對題數分佈！
+            h3(style="text-indent:0") 看看別人答對幾題吧！
             br
             br
 
             #final-chart.barchart
               .bars
-                .bar(ng-repeat="a in final.data",ng-attr-style="height:{{a[0]/final.max}}%;left:{{12.5*$index}}%") 
+                .bar(ng-repeat="a in final.data",ng-attr-style="height:{{100*a[0]/final.max}}%;left:{{12.5*$index}}%") 
               .q-btmline
               .labels
                 .label 0 題
@@ -319,3 +319,16 @@ html(lang="en")
                 .label 7 題
               .you-value(ng-attr-style="left:{{12.5 * final.you + 6.25}}%")
               //-.all-value(ng-attr-style="left:{{12.5 * final.all + 6.25}}%")
+            br
+            br
+            br
+
+            .para.noindent: small
+              h4(style="text-indent:0") Credit
+              | 專題企畫／蔣宜婷、邱彥瑜
+              br
+              | 網頁工程／Kirby Wu（零傳媒）
+              br
+              | 網頁設計／黃禹禛、吳政達
+              br
+              | 編採團隊／蘇柔郡、彭筱婷、陳貞樺、陳韻年
