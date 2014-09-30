@@ -33,9 +33,13 @@ angular.module \main, <[firebase]>
       map: -> (100 / 15) * ( (30 + it * 10) - 27 ) / 4
     $scope.Q3 = do
       data: [11432 3501 583 5 1]
-      you: 2
-      all: 1
+      you: 0
+      all: 0
       map: -> [0 1 2 4 0][it] * 20
+    $scope.Q4 = do
+      data: [[0] [0] [0] [0]]
+      max: 0
+
     $scope.Q5 = do
       data: [7825 2810 967 2268]
       you: 1
@@ -45,18 +49,37 @@ angular.module \main, <[firebase]>
       map: (choice,role) -> 
         @data[if role=='you' => 4 else 5][0] = [0 25000 45000 65000 85000][choice]
     $scope.final = do
-      data: [1 6 45 120 99 65 23 4]
+      data: [[0] [0] [0] [0] [0] [0] [0] [0]]
+      max: 0
       you: 0
       all: 0
 
-    $scope.q4Count = [23 55 5 10]
-    $scope.q5Count = [23 55 5 10]
+
+    $scope.alls = count: 0, Q1: 0, Q2: 0, Q3: 0, Q4: 0, Q5: 0, Q6: 0, Q7: 0
 
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
-    $scope.ans = {Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}, Q6:{}, Q7:{}, Q8:{}}
-    $scope.trueAns = Q1: 1, Q2: 3, Q3: 4, Q4: 4, Q5: 5, Q6: 2, Q7: 4
+    #$scope.ans = {Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}, Q6:{}, Q7:{}, Q8:{}}
+    #$scope.ans = Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}
+    $scope.trueAns = Q1: 1, Q2: 3, Q3: 4, Q4: 4, Q5: 4, Q6: 2, Q7: 4
     $scope.skolto = (nid) -> skolto nid, 0
+    $scope.db.$watch (e) ->
+      if e.event == "child_added" => 
+        idx = $scope.db.$indexFor e.key
+        item = $scope.db[idx]
+        $scope.alls.count++
+        count = 0
+        for k of $scope.alls =>
+          if k == "count" => continue
+          if !isNaN(item[k]) and $scope[k] and $scope[k]map =>
+            $scope.alls[k] += $scope[k]map item[k], 'all'
+          if $scope.trueAns[k] == item[k] => count++
+        for k of $scope.alls =>
+          if $scope[k] => 
+            $scope[k].all = $scope.alls[k] / $scope.alls.count
+        if !isNaN(item.Q4) => $scope.Q4.max >?= (++$scope.Q4.data[item.Q4 - 1][0])
+        $scope.final.data[count][0]++
+        if $scope.final.data[count][0] > $scope.final.max => $scope.final.max = $scope.final.data[count][0] / 100
     $scope.$watch 'ans', -> 
       $scope.final.you = 0
       for i from 1 to 7 =>
@@ -64,6 +87,8 @@ angular.module \main, <[firebase]>
         if !isNaN($scope.ans[n]) and $scope[n] and $scope[n]map => 
           $scope[n]you = $scope[n]map $scope.ans[n], 'you'
         if $scope.ans[n] == $scope.trueAns[n] => $scope.final.you++
+      if !isNaN($scope.ans["Q7"]) =>
+        $scope.db.$add $scope.ans
     , true
     addsound = (name) ->
       node = document.createElement \audio

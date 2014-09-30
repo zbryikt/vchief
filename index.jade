@@ -180,7 +180,7 @@ html(lang="en")
 
             #Q4-chart.barchart
               .bars
-                .bar(ng-repeat="c in q4Count",ng-attr-style="height:{{c/0.55}}%;left:{{25*$index}}%")
+                .bar(ng-repeat="c in Q4.data",ng-attr-style="height:{{c[0]/0.55}}%;left:{{25*$index}}%")
               .q-btmline
               .labels
                 .label A
@@ -310,11 +310,11 @@ html(lang="en")
 
             #final-chart.barchart
               .bars
-                .bar(ng-repeat="a in final.data",ng-attr-style="height:{{a/1.2}}%;left:{{12.5*$index}}%") 
+                .bar(ng-repeat="a in final.data",ng-attr-style="height:{{a[0]/final.max}}%;left:{{12.5*$index}}%") 
               .q-btmline
               .labels
                 .label 0 題
                 .label 3 題
                 .label 7 題
               .you-value(ng-attr-style="left:{{12.5 * final.you + 6.25}}%")
-              .all-value(ng-attr-style="left:{{12.5 * final.all + 6.25}}%")
+              //-.all-value(ng-attr-style="left:{{12.5 * final.all + 6.25}}%")

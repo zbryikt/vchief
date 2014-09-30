@@ -54,11 +54,15 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
   };
   $scope.Q3 = {
     data: [11432, 3501, 583, 5, 1],
-    you: 2,
-    all: 1,
+    you: 0,
+    all: 0,
     map: function(it){
       return [0, 1, 2, 4, 0][it] * 20;
     }
+  };
+  $scope.Q4 = {
+    data: [[0], [0], [0], [0]],
+    max: 0
   };
   $scope.Q5 = {
     data: [7825, 2810, 967, 2268],
@@ -72,40 +76,71 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
     }
   };
   $scope.final = {
-    data: [1, 6, 45, 120, 99, 65, 23, 4],
+    data: [[0], [0], [0], [0], [0], [0], [0], [0]],
+    max: 0,
     you: 0,
     all: 0
   };
-  $scope.q4Count = [23, 55, 5, 10];
-  $scope.q5Count = [23, 55, 5, 10];
+  $scope.alls = {
+    count: 0,
+    Q1: 0,
+    Q2: 0,
+    Q3: 0,
+    Q4: 0,
+    Q5: 0,
+    Q6: 0,
+    Q7: 0
+  };
   $scope.randomFact = randomFact();
   $scope.ans = {
     Q1: {}
-  };
-  $scope.ans = {
-    Q1: {},
-    Q2: {},
-    Q3: {},
-    Q4: {},
-    Q5: {},
-    Q6: {},
-    Q7: {},
-    Q8: {}
   };
   $scope.trueAns = {
     Q1: 1,
     Q2: 3,
     Q3: 4,
     Q4: 4,
-    Q5: 5,
+    Q5: 4,
     Q6: 2,
     Q7: 4
   };
   $scope.skolto = function(nid){
     return skolto(nid, 0);
   };
+  $scope.db.$watch(function(e){
+    var idx, item, count, k, ref$, ref1$;
+    if (e.event === "child_added") {
+      idx = $scope.db.$indexFor(e.key);
+      item = $scope.db[idx];
+      $scope.alls.count++;
+      count = 0;
+      for (k in $scope.alls) {
+        if (k === "count") {
+          continue;
+        }
+        if (!isNaN(item[k]) && $scope[k] && $scope[k].map) {
+          $scope.alls[k] += $scope[k].map(item[k], 'all');
+        }
+        if ($scope.trueAns[k] === item[k]) {
+          count++;
+        }
+      }
+      for (k in $scope.alls) {
+        if ($scope[k]) {
+          $scope[k].all = $scope.alls[k] / $scope.alls.count;
+        }
+      }
+      if (!isNaN(item.Q4)) {
+        (ref$ = $scope.Q4).max >= (ref1$ = ++$scope.Q4.data[item.Q4 - 1][0]) || (ref$.max = ref1$);
+      }
+      $scope.final.data[count][0]++;
+      if ($scope.final.data[count][0] > $scope.final.max) {
+        return $scope.final.max = $scope.final.data[count][0] / 100;
+      }
+    }
+  });
   $scope.$watch('ans', function(){
-    var i$, i, n, results$ = [];
+    var i$, i, n;
     $scope.final.you = 0;
     for (i$ = 1; i$ <= 7; ++i$) {
       i = i$;
@@ -114,10 +149,12 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
         $scope[n].you = $scope[n].map($scope.ans[n], 'you');
       }
       if ($scope.ans[n] === $scope.trueAns[n]) {
-        results$.push($scope.final.you++);
+        $scope.final.you++;
       }
     }
-    return results$;
+    if (!isNaN($scope.ans["Q7"])) {
+      return $scope.db.$add($scope.ans);
+    }
   }, true);
   addsound = function(name){
     var node, ref$;

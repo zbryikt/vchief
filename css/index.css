@@ -645,6 +645,10 @@ a {
     text-align: center;
     font-size: 0.5em;
     font-weight: 900; }
+.barchart .all-value {
+  height: 70%;
+  bottom: 0;
+  top: auto; }
 
 .barchart .title {
   position: absolute;

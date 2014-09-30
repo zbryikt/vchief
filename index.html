@@ -229,7 +229,7 @@
             <p class="answer">正確答案：跟里民有關的一手包辦</p><br>
             <div id="Q4-chart" class="barchart">
               <div class="bars">
-                <div ng-repeat="c in q4Count" ng-attr-style="height:{{c/0.55}}%;left:{{25*$index}}%" class="bar"></div>
+                <div ng-repeat="c in Q4.data" ng-attr-style="height:{{c[0]/0.55}}%;left:{{25*$index}}%" class="bar"></div>
               </div>
               <div class="q-btmline"></div>
               <div class="labels">
@@ -410,7 +410,7 @@
             <h3>你答對幾題？來看網友答對題數分佈！</h3><br><br>
             <div id="final-chart" class="barchart">
               <div class="bars">
-                <div ng-repeat="a in final.data" ng-attr-style="height:{{a/1.2}}%;left:{{12.5*$index}}%" class="bar"></div>
+                <div ng-repeat="a in final.data" ng-attr-style="height:{{a[0]/final.max}}%;left:{{12.5*$index}}%" class="bar"></div>
               </div>
               <div class="q-btmline"></div>
               <div class="labels">
@@ -419,7 +419,6 @@
                 <div class="label">7 題</div>
               </div>
               <div ng-attr-style="left:{{12.5 * final.you + 6.25}}%" class="you-value"></div>
-              <div ng-attr-style="left:{{12.5 * final.all + 6.25}}%" class="all-value"></div>
             </div>
           </div>
         </div>
