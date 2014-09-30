@@ -80,8 +80,8 @@ html(lang="en")
             #Q1-chart.q-chart
               #Q1-male 男性
               #Q1-female 女性
-              #Q1-all
-              #Q1-you
+              #Q1-all(ng-attr-style="left:{{q1.you}}%")
+              #Q1-you(ng-attr-style="left:{{q1.all}}%")
             br
             br
             p 爬梳中選會資料，女性擔任村里長的比例，在縣（市）只有10.21%、在直轄市為14％，全國平均僅12.03％。婦女新知基金會監事、台大政治系副教授黃長玲曾指出，觀察婦女參政趨勢，可發現民意代表中女性比例持續成長，但是女性首長比例多年來變化有限，越往基層女性比例越少。
@@ -114,14 +114,14 @@ html(lang="en")
 
             #Q2-chart.barchart
               .bars
-                .bar(ng-repeat="a in q2Age",ng-attr-style="height:{{a/0.7}}%;left:{{7*$index}}%") 
+                .bar(ng-repeat="a in q2.data",ng-attr-style="height:{{a/15.08}}%;left:{{6.6*$index}}%") 
               .q-btmline
               .labels
-                .label 25 歲
-                .label 55 歲
-                .label 85 歲
-              .you-value
-              .all-value
+                .label 27 歲
+                .label 60 歲
+                .label 87 歲
+              .you-value(ng-attr-style="left: {{q2.you}}%")
+              .all-value(ng-attr-style="left: {{q2.all}}%")
 
             br
             br
@@ -144,7 +144,7 @@ html(lang="en")
 
             #Q3-chart.barchart
               .bars
-                .bar(ng-repeat="c in q3Count",ng-attr-style="height:{{c/80}}%;left:{{20*$index}}%")
+                .bar(ng-repeat="c in q3.data",ng-attr-style="height:{{c/80}}%;left:{{20*$index}}%")
               .q-btmline
               .labels
                 .label 無黨籍
@@ -152,8 +152,8 @@ html(lang="en")
                 .label 民進黨
                 .label 其他
                 .label 親民黨
-              .you-choice 你的選擇
-              .all-choice 主流選擇
+              .you-choice(ng-attr-style="left:{{20*q3.you}}%") 你的選擇
+              .all-choice(ng-attr-style="left:{{20*q3.all}}%") 主流選擇
 
             br
             br

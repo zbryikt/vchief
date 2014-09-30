@@ -3,8 +3,20 @@ var x$;
 x$ = angular.module('main', []);
 x$.controller('section', ['$scope', '$element', 'skolto'].concat(function($scope, $element, skolto){
   var id;
-  $scope.q2Age = [1, 2, 4, 8, 16, 32, 48, 56, 49, 47, 31, 15, 7, 3];
-  $scope.q3Count = [11432, 3501, 583, 5, 1];
+  $scope.q1 = {
+    you: 75,
+    all: 45
+  };
+  $scope.q2 = {
+    data: [9, 27, 82, 199, 357, 690, 1158, 1507, 1497, 1012, 593, 424, 204, 47, 18],
+    you: 75,
+    all: 45
+  };
+  $scope.q3 = {
+    data: [11432, 3501, 583, 5, 1],
+    you: 2,
+    all: 3
+  };
   $scope.q4Count = [23, 55, 5, 10];
   $scope.q5Count = [23, 55, 5, 10];
   $scope.q6Count = [25175, 45000, 45965, 55000, 62475];
