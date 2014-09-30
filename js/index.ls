@@ -33,6 +33,7 @@ angular.module \main, <[firebase]>
       map: -> (100 / 15) * ( (30 + it * 10) - 27 ) / 4
     $scope.Q3 = do
       data: [11432 3501 583 5 1]
+      choice: [0 0 0 0 0]
       you: 0
       all: 0
       map: -> [0 1 2 4 0][it] * 20
@@ -77,6 +78,11 @@ angular.module \main, <[firebase]>
         for k of $scope.alls =>
           if $scope[k] => 
             $scope[k].all = $scope.alls[k] / $scope.alls.count
+        if !isNaN(item.Q3) => if item.Q3 < $scope.Q3.choice[item.Q3].length =>
+          $scope.Q3.choice[item.Q3]++
+          if $scope.Q3.max < $scope.Q3.choice[item.Q3] =>
+            $scope.Q3.max = $scope.Q3.choice[item.Q3]
+            $scope.q3.all = item.Q3
         if !isNaN(item.Q4) => $scope.Q4.max >?= (++$scope.Q4.data[item.Q4 - 1][0])
         $scope.final.data[count][0]++
         if $scope.final.data[count][0] > $scope.final.max => $scope.final.max = $scope.final.data[count][0] / 100

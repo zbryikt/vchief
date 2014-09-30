@@ -54,6 +54,7 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
   };
   $scope.Q3 = {
     data: [11432, 3501, 583, 5, 1],
+    choice: [0, 0, 0, 0, 0],
     you: 0,
     all: 0,
     map: function(it){
@@ -128,6 +129,15 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
       for (k in $scope.alls) {
         if ($scope[k]) {
           $scope[k].all = $scope.alls[k] / $scope.alls.count;
+        }
+      }
+      if (!isNaN(item.Q3)) {
+        if (item.Q3 < $scope.Q3.choice[item.Q3].length) {
+          $scope.Q3.choice[item.Q3]++;
+          if ($scope.Q3.max < $scope.Q3.choice[item.Q3]) {
+            $scope.Q3.max = $scope.Q3.choice[item.Q3];
+            $scope.q3.all = item.Q3;
+          }
         }
       }
       if (!isNaN(item.Q4)) {
