@@ -97,16 +97,6 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
   $scope.ans = {
     Q1: {}
   };
-  $scope.ans = {
-    Q1: {},
-    Q2: {},
-    Q3: {},
-    Q4: {},
-    Q5: {},
-    Q6: {},
-    Q7: {},
-    Q8: {}
-  };
   $scope.trueAns = {
     Q1: 1,
     Q2: 3,
