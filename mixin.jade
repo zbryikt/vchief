@@ -1,5 +1,8 @@
-mixin img(id)
-  img(src="img/chief/"+id+".png",ng-class="{'active':ans['"+id+"']}")
+mixin img(id,alt)
+  if alt
+    img(src="img/chief/"+alt,ng-class="{'active':ans['"+id+"']}")
+  else
+    img(src="img/chief/"+id+".png",ng-class="{'active':ans['"+id+"']}")
 
 mixin section(id)
   .section(ng-controller="section",id=id)
