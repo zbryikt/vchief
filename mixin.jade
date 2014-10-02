@@ -38,4 +38,8 @@ mixin puzzle-inline(count)
     - var idx = 1
     while idx <= count
       +img('Q'+idx)
+      if idx == 1
+        +img('Q1', 'cat.gif')
+      if idx == 8
+        +img('Q8', 'eye.gif')
       - idx++
