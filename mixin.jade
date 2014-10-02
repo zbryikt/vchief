@@ -21,7 +21,8 @@ mixin choice(id, next, ans)
     - var ans = " answer"
     - var correct = true
   div(class="choice c"+id+ans,ng-class="{'chosen': chosen=="+id+",'fill': ans['"+next+"']}",ng-click="choice("+id+",'"+next+"',"+correct+")")
-    img(src="img/choice/empty.png")
+    //-img(src="img/choice/empty.png")
+    img.btn-base
     .desc: block
 
 mixin question(size)

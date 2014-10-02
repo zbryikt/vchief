@@ -30,7 +30,7 @@ x$.controller('section', ['$scope', '$element', '$firebase', 'skolto'].concat(fu
   };
 }));
 x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(function($scope, $firebase, randomFact, skolto){
-  var db, addsound, i$, i, img, results$ = [];
+  var db, addsound, i$, i, img;
   setTimeout(function(){
     return $('#footer').sticky({
       topSpacing: 0
@@ -181,7 +181,9 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
   for (i$ = 1; i$ <= 8; ++i$) {
     i = i$;
     img = new Image();
-    results$.push(img.src = "img/chief/Q" + i + ".png");
+    img.src = "img/chief/Q" + i + ".png";
   }
-  return results$;
+  return $('.btn-base').attr({
+    src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAAEHCAMAAAA0z0xSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////AAAAVcLTfgAAAAF0Uk5TAEDm2GYAAABISURBVHja7MExAQAAAMKg9U9tDQ+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAODIBBgAvAEAATkNxaoAAAAASUVORK5CYII="
+  });
 }));
