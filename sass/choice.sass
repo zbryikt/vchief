@@ -10,10 +10,8 @@
     width: auto
 
 .choice
-  width: 91px
-  background-position: top left
+  width: 90px
   background-repeat: no-repeat
-  background-size: cover
   display: inline-block
   cursor: pointer
   position: relative
@@ -49,25 +47,41 @@
   opacity: 1
 
 @mixin choice-spec($id)
-  .choice.c#{$id}
-    background-image: url(../img/choice/1#{$id}.png)
-  .choice.c#{$id}:hover
-    background-image: url(../img/choice/2#{$id}.png)
-  .choice.c#{$id}.chosen
-    background-image: url(../img/choice/4#{$id}.png)
-  .choice.c#{$id}.chosen.answer.fill
-    background-image: url(../img/choice/5#{$id}.png)
-  .choice.c#{$id}.fill.answer
-    background-image: url(../img/choice/3#{$id}.png)
+  @media (min-width: 481px)
+    .choice.c#{$id}
+      background-position: #{($id - 1) * -91}px 0
+    .choice.c#{$id}:hover
+      background-position: #{($id - 1) * -91}px -132px
+    .choice.c#{$id}.chosen
+      background-position: #{($id - 1) * -91}px -395px
+    .choice.c#{$id}.chosen.answer.fill
+      background-position: #{($id - 1) * -91}px -526px
+    .choice.c#{$id}.fill.answer
+      background-position: #{($id - 1) * -91}px -263px
+  @media (max-width: 480px)
+    .choice.c#{$id}
+      background-position: #{($id - 1) * -71}px 0
+    .choice.c#{$id}:hover
+      background-position: #{($id - 1) * -71}px -103px
+    .choice.c#{$id}.chosen
+      background-position: #{($id - 1) * -71}px -308px
+    .choice.c#{$id}.chosen.answer.fill
+      background-position: #{($id - 1) * -71}px -410px
+    .choice.c#{$id}.fill.answer
+      background-position: #{($id - 1) * -71}px -205px
 
 @include choice-spec(1)
 @include choice-spec(2)
 @include choice-spec(3)
 @include choice-spec(4)
 
+@media (min-width: 481px)
+  .choice
+    background-image: url(../img/choice/lg.png)
 @media (max-width: 480px)
   .choices
     text-align: center
   .choice
-    width: 71px
+    background-image: url(../img/choice/sm.png)
+    width: 70px
     line-height: 0.8em
