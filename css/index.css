@@ -344,34 +344,71 @@ a {
     display: block;
     width: 44px;
     height: 44px;
-    background-position: center center;
     background-repeat: no-repeat;
-    background-image: url(../img/menu-disabled.png); }
+    background-position: 0 0;
+    background-image: url(../img/menu-all.png); }
   #menu .item.active {
-    background-image: url(../img/menu.png);
     cursor: pointer; }
-  #menu .item.active:hover {
-    background-image: url(../img/menu-invert.png); }
   #menu .item:nth-of-type(1) {
+    background-position: -88px 0px; }
+  #menu .item:nth-of-type(1).active {
     background-position: 0 0px; }
+  #menu .item:nth-of-type(1).active:hover {
+    background-position: -44px 0px; }
   #menu .item:nth-of-type(2) {
+    background-position: -88px -44px; }
+  #menu .item:nth-of-type(2).active {
     background-position: 0 -44px; }
+  #menu .item:nth-of-type(2).active:hover {
+    background-position: -44px -44px; }
   #menu .item:nth-of-type(3) {
+    background-position: -88px -88px; }
+  #menu .item:nth-of-type(3).active {
     background-position: 0 -88px; }
+  #menu .item:nth-of-type(3).active:hover {
+    background-position: -44px -88px; }
   #menu .item:nth-of-type(4) {
+    background-position: -88px -132px; }
+  #menu .item:nth-of-type(4).active {
     background-position: 0 -132px; }
+  #menu .item:nth-of-type(4).active:hover {
+    background-position: -44px -132px; }
   #menu .item:nth-of-type(5) {
+    background-position: -88px -176px; }
+  #menu .item:nth-of-type(5).active {
     background-position: 0 -176px; }
+  #menu .item:nth-of-type(5).active:hover {
+    background-position: -44px -176px; }
   #menu .item:nth-of-type(6) {
+    background-position: -88px -220px; }
+  #menu .item:nth-of-type(6).active {
     background-position: 0 -220px; }
+  #menu .item:nth-of-type(6).active:hover {
+    background-position: -44px -220px; }
   #menu .item:nth-of-type(7) {
+    background-position: -88px -264px; }
+  #menu .item:nth-of-type(7).active {
     background-position: 0 -264px; }
+  #menu .item:nth-of-type(7).active:hover {
+    background-position: -44px -264px; }
   #menu .item:nth-of-type(8) {
+    background-position: -88px -308px; }
+  #menu .item:nth-of-type(8).active {
     background-position: 0 -308px; }
+  #menu .item:nth-of-type(8).active:hover {
+    background-position: -44px -308px; }
   #menu .item:nth-of-type(9) {
+    background-position: -88px -352px; }
+  #menu .item:nth-of-type(9).active {
     background-position: 0 -352px; }
+  #menu .item:nth-of-type(9).active:hover {
+    background-position: -44px -352px; }
   #menu .item:nth-of-type(10) {
+    background-position: -88px -396px; }
+  #menu .item:nth-of-type(10).active {
     background-position: 0 -396px; }
+  #menu .item:nth-of-type(10).active:hover {
+    background-position: -44px -396px; }
 
 @media (max-width: 480px) {
   #menu {
