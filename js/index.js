@@ -30,7 +30,7 @@ x$.controller('section', ['$scope', '$element', '$firebase', 'skolto'].concat(fu
   };
 }));
 x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(function($scope, $firebase, randomFact, skolto){
-  var db, addsound, i$, i, img, lresult$, j$, j, results$ = [];
+  var db, addsound, i$, i, img, results$ = [];
   setTimeout(function(){
     return $('#footer').sticky({
       topSpacing: 0
@@ -181,17 +181,7 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
   for (i$ = 1; i$ <= 8; ++i$) {
     i = i$;
     img = new Image();
-    img.src = "img/chief/Q" + i + ".png";
-  }
-  for (i$ = 1; i$ <= 5; ++i$) {
-    i = i$;
-    lresult$ = [];
-    for (j$ = 1; j$ <= 4; ++j$) {
-      j = j$;
-      img = new Image();
-      lresult$.push(img.src = "img/choice/" + i + j + ".png");
-    }
-    results$.push(lresult$);
+    results$.push(img.src = "img/chief/Q" + i + ".png");
   }
   return results$;
 }));
