@@ -651,20 +651,10 @@ a {
   100% {
     left: 8%; } }
 #bhs-door-l {
-  background-image: url(../img/banner/door-l.png);
-  -ms-animation: bhs-door-l ease-in-out 1 1.5s;
-  -moz-animation: bhs-door-l ease-in-out 1 1.5s;
-  -webkit-animation: bhs-door-l ease-in-out 1 1.5s;
-  -o-animation: bhs-door-l ease-in-out 1 1.5s;
-  animation: bhs-door-l ease-in-out 1 1.5s; }
+  background-image: url(../img/banner/door-l.png); }
 
 #bhs-door-r {
-  background-image: url(../img/banner/door-r.png);
-  -ms-animation: bhs-door-r ease-in-out 1 1.5s;
-  -moz-animation: bhs-door-r ease-in-out 1 1.5s;
-  -webkit-animation: bhs-door-r ease-in-out 1 1.5s;
-  -o-animation: bhs-door-r ease-in-out 1 1.5s;
-  animation: bhs-door-r ease-in-out 1 1.5s; }
+  background-image: url(../img/banner/door-r.png); }
 
 #bhs-door-l, #bhs-door-r {
   z-index: 7;
@@ -961,3 +951,6 @@ a {
 #final-chart .all-value:before {
   content: "平均";
   top: -26px; }
+
+#final-chart.barchar .bar {
+  background: #00aabc; }

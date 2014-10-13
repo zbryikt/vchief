@@ -41,6 +41,7 @@ angular.module \main, <[firebase]>
     $scope.Q4 = do
       data: [[0] [0] [0] [0]]
       max: 0
+      map: -> it - 1
 
     $scope.Q5 = do
       data: [7825 2810 967 2268]
@@ -110,3 +111,11 @@ angular.module \main, <[firebase]>
       img = new Image!
       img.src = "img/chief/Q#i.png"
     $('\.btn-base').attr src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAAEHCAMAAAA0z0xSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////AAAAVcLTfgAAAAF0Uk5TAEDm2GYAAABISURBVHja7MExAQAAAMKg9U9tDQ+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAODIBBgAvAEAATkNxaoAAAAASUVORK5CYII="
+    door-animation = ->
+      [L,R] = [$(\#bhs-door-l), $(\#bhs-door-r)]
+      [w,h] = [L.width!, L.height!]
+      if w/h > 900/474 => w = (h / 474) * 900
+      L.animate { left: "#{w * -0.165}px" }, 3000
+      R.animate { left: "#{w *  0.16}px" }, 3000
+
+    door-animation!

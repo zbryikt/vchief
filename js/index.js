@@ -30,7 +30,7 @@ x$.controller('section', ['$scope', '$element', '$firebase', 'skolto'].concat(fu
   };
 }));
 x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(function($scope, $firebase, randomFact, skolto){
-  var db, addsound, i$, i, img;
+  var db, addsound, i$, i, img, doorAnimation;
   setTimeout(function(){
     return $('#footer').sticky({
       topSpacing: 0
@@ -64,7 +64,10 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
   };
   $scope.Q4 = {
     data: [[0], [0], [0], [0]],
-    max: 0
+    max: 0,
+    map: function(it){
+      return it - 1;
+    }
   };
   $scope.Q5 = {
     data: [7825, 2810, 967, 2268],
@@ -183,7 +186,22 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
     img = new Image();
     img.src = "img/chief/Q" + i + ".png";
   }
-  return $('.btn-base').attr({
+  $('.btn-base').attr({
     src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAAEHCAMAAAA0z0xSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////AAAAVcLTfgAAAAF0Uk5TAEDm2GYAAABISURBVHja7MExAQAAAMKg9U9tDQ+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAODIBBgAvAEAATkNxaoAAAAASUVORK5CYII="
   });
+  doorAnimation = function(){
+    var ref$, L, R, w, h;
+    ref$ = [$('#bhs-door-l'), $('#bhs-door-r')], L = ref$[0], R = ref$[1];
+    ref$ = [L.width(), L.height()], w = ref$[0], h = ref$[1];
+    if (w / h > 900 / 474) {
+      w = (h / 474) * 900;
+    }
+    L.animate({
+      left: w * -0.165 + "px"
+    }, 3000);
+    return R.animate({
+      left: w * 0.16 + "px"
+    }, 3000);
+  };
+  return doorAnimation();
 }));
