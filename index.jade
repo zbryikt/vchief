@@ -40,7 +40,7 @@ html(lang="en")
           .line 對多數人來講，我們心中的里長印象，大多限於社區廣播器的聲音，以及公告上的署名。
           .line 里長，應該是連結我們與政府的重要媒介，但我們總是只聞其聲不見其人，甚至里長的職務內容都不清楚。
           .line 你心中的里長輪廓是什麼樣子呢？新聞 e 論壇分析了台灣里長的相關資料，透過回答下面７大問題，一步一步描繪出台灣里長的大致樣貌。
-        #bnr-more
+        #bnr-more(ng-click="skolto('content')")
       #menu(ng-class="{'active':menuShow}")
         a.item(ng-click="menuShow=!!!menuShow")
         a.item(ng-click="skolto('Q1-Q')",ng-class="{'active':ans['Q1']}")

@@ -577,7 +577,8 @@ a {
   margin-left: -20px;
   background-image: url(../img/banner/more.png);
   background-position: center center;
-  background-size: cover; }
+  background-size: cover;
+  cursor: pointer; }
 
 #bhs-container {
   position: absolute;
