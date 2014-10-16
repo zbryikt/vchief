@@ -62,7 +62,7 @@ angular.module \main, <[firebase]>
 
     $scope.randomFact = randomFact!
     $scope.ans = {Q1: {}}
-    $scope.ans = {Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}, Q6:{}, Q7:{}, Q8:{}}
+    #$scope.ans = {Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}, Q6:{}, Q7:{}, Q8:{}}
     #$scope.ans = Q1: {}, Q2:{}, Q3:{}, Q4:{}, Q5:{}
     $scope.trueAns = Q1: 1, Q2: 3, Q3: 4, Q4: 4, Q5: 4, Q6: 2, Q7: 4
     $scope.skolto = (nid) -> skolto nid, 0
