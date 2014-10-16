@@ -12,7 +12,7 @@ html, body {
   position: absolute;
   top: 100%;
   background: #ffc800;
-  padding: 100px 0; }
+  padding: 0; }
 
 @media (max-width: 800px) {
   #content {
@@ -952,5 +952,14 @@ a {
   content: "平均";
   top: -26px; }
 
-#final-chart.barchar .bar {
-  background: #00aabc; }
+#final-chart.barchart .bar {
+  background: #00aabc;
+  border: 1px solid #000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
+
+.para.answer.final {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%; }
+  .para.answer.final p.answer {
+    text-align: left; }
