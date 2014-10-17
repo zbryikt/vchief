@@ -243,7 +243,7 @@
             <p class="answer">正確答案：跟里民有關的一手包辦</p><br>
             <div id="Q4-chart" class="barchart">
               <div class="bars">
-                <div ng-repeat="c in Q4.data" ng-attr-style="height:{{c[0]/0.55}}%;left:{{25*$index}}%" class="bar"></div>
+                <div ng-repeat="c in Q4.data" ng-attr-style="height:{{100*c[0]/Q4.max}}%;left:{{25*$index}}%" class="bar"></div>
               </div>
               <div class="q-btmline"></div>
               <div class="labels">

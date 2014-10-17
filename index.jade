@@ -192,7 +192,7 @@ html(lang="en")
 
             #Q4-chart.barchart
               .bars
-                .bar(ng-repeat="c in Q4.data",ng-attr-style="height:{{c[0]/0.55}}%;left:{{25*$index}}%")
+                .bar(ng-repeat="c in Q4.data",ng-attr-style="height:{{100*c[0]/Q4.max}}%;left:{{25*$index}}%")
               .q-btmline
               .labels
                 .label A
