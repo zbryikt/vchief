@@ -71,6 +71,12 @@
     width: 90%
     left: 5%
 
+@include keyframes(bnr-more)
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
 #bnr-more
   width: 41px
   height: 18px
@@ -82,4 +88,15 @@
   background-position: center center
   background-size: cover
   cursor: pointer
+  @include animation(bnr-more infinite linear 1s)
+  &:before
+    content: "了解更多"
+    display: block
+    width: 200px
+    margin-left: -79px
+    margin: -20px 0 0 -79px
+    text-align: center
+    color: #fff
+    font-size: 0.7em
+
 @import house

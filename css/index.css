@@ -568,6 +568,26 @@ a {
     bottom: 30px;
     width: 90%;
     left: 5%; } }
+@-webkit-keyframes bnr-more {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-moz-keyframes bnr-more {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-ms-keyframes bnr-more {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes bnr-more {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 #bnr-more {
   width: 41px;
   height: 18px;
@@ -578,7 +598,21 @@ a {
   background-image: url(../img/banner/more.png);
   background-position: center center;
   background-size: cover;
-  cursor: pointer; }
+  cursor: pointer;
+  -ms-animation: bnr-more infinite linear 1s;
+  -moz-animation: bnr-more infinite linear 1s;
+  -webkit-animation: bnr-more infinite linear 1s;
+  -o-animation: bnr-more infinite linear 1s;
+  animation: bnr-more infinite linear 1s; }
+  #bnr-more:before {
+    content: "了解更多";
+    display: block;
+    width: 200px;
+    margin-left: -79px;
+    margin: -20px 0 0 -79px;
+    text-align: center;
+    color: #fff;
+    font-size: 0.7em; }
 
 #bhs-container {
   position: absolute;
