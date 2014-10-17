@@ -197,10 +197,10 @@ x$.controller('main', ['$scope', '$firebase', 'randomFact', 'skolto'].concat(fun
       w = (h / 474) * 900;
     }
     L.animate({
-      left: w * -0.165 + "px"
+      left: w * -0.164 + "px"
     }, 3000);
     return R.animate({
-      left: w * 0.16 + "px"
+      left: w * 0.156 + "px"
     }, 3000);
   };
   return doorAnimation();

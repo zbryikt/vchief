@@ -115,7 +115,7 @@ angular.module \main, <[firebase]>
       [L,R] = [$(\#bhs-door-l), $(\#bhs-door-r)]
       [w,h] = [L.width!, L.height!]
       if w/h > 900/474 => w = (h / 474) * 900
-      L.animate { left: "#{w * -0.165}px" }, 3000
-      R.animate { left: "#{w *  0.16}px" }, 3000
+      L.animate { left: "#{w * -0.164}px" }, 3000
+      R.animate { left: "#{w *  0.156}px" }, 3000
 
     door-animation!
